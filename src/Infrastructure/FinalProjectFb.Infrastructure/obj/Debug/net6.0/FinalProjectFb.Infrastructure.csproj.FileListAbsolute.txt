@@ -1,0 +1,11 @@
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\bin\Debug\net6.0\FinalProjectFb.Infrastructure.deps.json
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\bin\Debug\net6.0\FinalProjectFb.Infrastructure.dll
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\bin\Debug\net6.0\FinalProjectFb.Infrastructure.pdb
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.AssemblyInfo.cs
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.dll
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\refint\FinalProjectFb.Infrastructure.dll
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\FinalProjectFb.Infrastructure.pdb
+C:\Users\Fidan\source\repos\FinalProjectFb\src\Infrastructure\FinalProjectFb.Infrastructure\obj\Debug\net6.0\ref\FinalProjectFb.Infrastructure.dll
