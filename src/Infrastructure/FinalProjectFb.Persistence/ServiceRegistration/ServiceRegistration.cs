@@ -1,7 +1,7 @@
 ﻿using FinalProjectFb.Persistence.DAL;
-using FinalProjectFb.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using FinalProjectFb.Domain.Entities;
 
 namespace FinalProjectFb.Persistence.ServiceRegistration
 {
@@ -17,8 +18,7 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Default"),
-                b => b.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName)));
+            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("Default")));
 
             services.AddIdentity<AppUser, IdentityRole>(opt =>
             {
@@ -31,7 +31,6 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
-
             return services;
         }
     }
