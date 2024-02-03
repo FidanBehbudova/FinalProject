@@ -180,7 +180,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Company", b =>
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,8 +188,39 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Cities")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Cities");
+                });
+
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -244,6 +275,21 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.ToTable("Companies");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.CompanyCity", b =>
+                {
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CompanyId", "CityId");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("CompanyCities");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -271,7 +317,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("NewsId")
+                    b.Property<int?>("NewsId")
                         .HasColumnType("int");
 
                     b.Property<string>("Url")
@@ -322,8 +368,10 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<DateTime>("DiscontinuationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ImageId")
-                        .HasColumnType("int");
+                    b.Property<string>("Experience")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -356,8 +404,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CompanyId");
-
-                    b.HasIndex("ImageId");
 
                     b.ToTable("Jobs");
                 });
@@ -618,6 +664,25 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Job");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.CompanyCity", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.City", "City")
+                        .WithMany("CompanyCities")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
+                        .WithMany("CompanyCities")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Image", b =>
                 {
                     b.HasOne("FinalProjectFb.Domain.Entities.Category", "Category")
@@ -630,9 +695,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasOne("FinalProjectFb.Domain.Entities.News", "News")
                         .WithMany("Images")
-                        .HasForeignKey("NewsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NewsId");
 
                     b.Navigation("Category");
 
@@ -651,15 +714,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .WithMany()
                         .HasForeignKey("CompanyId");
 
-                    b.HasOne("FinalProjectFb.Domain.Entities.Image", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageId");
-
                     b.Navigation("Category");
 
                     b.Navigation("Company");
-
-                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Requirementsİnfo", b =>
@@ -727,8 +784,15 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Jobs");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.City", b =>
+                {
+                    b.Navigation("CompanyCities");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Company", b =>
                 {
+                    b.Navigation("CompanyCities");
+
                     b.Navigation("Image")
                         .IsRequired();
                 });

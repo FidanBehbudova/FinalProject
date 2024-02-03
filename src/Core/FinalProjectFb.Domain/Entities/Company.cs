@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFb.Domain.Entities
 {
-    public class Company:BaseNameableEntity
+    public class Company : BaseNameableEntity
     {
         public int? ImageId { get; set; }
         public Image Image { get; set; }
@@ -17,10 +17,8 @@ namespace FinalProjectFb.Domain.Entities
         public string InstagramLink { get; set; }
         public string WebsiteLink { get; set; }
         public string TwitterLink { get; set; }
-        public string GmailLink { get; set; }
-        public Cities Cities { get; set; }
-
-      
+        public string GmailLink { get; set; }      
+        public ICollection<CompanyCity> CompanyCities { get; set; }
 
     }
 }

@@ -13,12 +13,7 @@ namespace FinalProjectFb.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Requirementsİnfo> builder)
         {
-            builder.Property(x => x.Requirement).IsRequired().HasColumnType("text");
-           
-
-           
-
-
+            builder.Property(x => x.Requirement).IsRequired().HasColumnType("text");                    
 
         }
     }

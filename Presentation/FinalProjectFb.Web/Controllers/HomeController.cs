@@ -1,4 +1,6 @@
 ﻿
+using FinalProjectFb.Application.Abstractions.Services;
+using FinalProjectFb.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,11 +8,19 @@ namespace FinalProjectFb.Web.Controllers
 {
     public class HomeController : Controller
     {
-       
-        public IActionResult Index()
+        private readonly IHomeService _service;
+
+        public HomeController(IHomeService service)
         {
-            return View();
+            _service = service;
         }
-       
+
+        public async Task<IActionResult> Index()
+        {
+            HomeVM vm = await _service.GetAllAsync();
+            return View(vm);
+        }
+
+
     }
 }

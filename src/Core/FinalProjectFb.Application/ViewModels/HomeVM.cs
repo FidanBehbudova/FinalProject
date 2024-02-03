@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFb.Application.ViewModels
 {
-    internal class HomeVM
+    public class HomeVM
     {
-        public List<Category> Categories { get; set; }
-        public List<Job> Jobs { get; set; }
-        public List<News> Newss { get; set; }
-        public List<Company> Companies { get; set; }
+        public ICollection<Category> Categories { get; set; }
+        public ICollection<Job> Jobs { get; set; }
+        public ICollection<News> Newss { get; set; }
+        public ICollection<Company> Companies { get; set; }
 
     }
 }

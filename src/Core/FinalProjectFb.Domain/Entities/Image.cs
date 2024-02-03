@@ -14,7 +14,7 @@ namespace FinalProjectFb.Domain.Entities
         public Company Company { get; set;}
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
-        public int NewsId { get; set; }
+        public int? NewsId { get; set; }
         public News News { get; set; }
     }
 }

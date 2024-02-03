@@ -26,13 +26,29 @@ namespace FinalProjectFb.Persistence.DAL
         public DbSet<Company> Companies { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<CompanyCity> CompanyCities { get; set; }
+        public DbSet<City> Cities { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Company>()
-         .HasOne(c => c.Image)
-         .WithOne(i => i.Company)
-         .HasForeignKey<Image>(i => i.CompanyId);
+            .HasOne(c => c.Image)
+            .WithOne(i => i.Company)
+            .HasForeignKey<Image>(i => i.CompanyId);
+            modelBuilder.Entity<CompanyCity>()
+            .HasKey(cc => new { cc.CompanyId, cc.CityId });
+
+            modelBuilder.Entity<CompanyCity>()
+                .HasOne(cc => cc.Company)
+                .WithMany(c => c.CompanyCities)
+                .HasForeignKey(cc => cc.CompanyId);
+
+            modelBuilder.Entity<CompanyCity>()
+                .HasOne(cc => cc.City)
+                .WithMany(c => c.CompanyCities)
+                .HasForeignKey(cc => cc.CityId);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
         }

@@ -405,6 +405,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\icon\\job-list4.png"
     },
     {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\kapital.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\kapital.png"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\555555.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\555555.png"
+    },
+    {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\form-iocn.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\form-iocn.jpg"
     },
@@ -419,6 +427,10 @@
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\logo2_footer.png",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\logo2_footer.png"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\logogogogo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logogogogo.png"
     },
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\logoheader.png",
@@ -439,6 +451,10 @@
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\logoooo1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\logoooo1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\preview22.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\preview22.jpg"
     },
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\logo\\select-items-icon.jpg",

@@ -11,6 +11,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using FinalProjectFb.Domain.Entities;
+using FinalProjectFb.Application.Abstractions.Repositories;
+using FinalProjectFb.Persistence.Implementations.Repositories;
+using FinalProjectFb.Application.Abstractions.Services;
+using FinalProjectFb.Persistence.Implementations.Services;
 
 namespace FinalProjectFb.Persistence.ServiceRegistration
 {
@@ -31,6 +35,13 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 opt.Lockout.AllowedForNewUsers = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<IJobRepository, JobRepository>();
+            services.AddScoped<INewsRepository, NewsRepository>(); 
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+
             return services;
         }
     }
