@@ -314,6 +314,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("JobId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
@@ -332,6 +335,10 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.HasIndex("CompanyId")
                         .IsUnique()
                         .HasFilter("[CompanyId] IS NOT NULL");
+
+                    b.HasIndex("JobId")
+                        .IsUnique()
+                        .HasFilter("[JobId] IS NOT NULL");
 
                     b.HasIndex("NewsId");
 
@@ -372,6 +379,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
+
+                    b.Property<int?>("ImageId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -693,6 +703,10 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .WithOne("Image")
                         .HasForeignKey("FinalProjectFb.Domain.Entities.Image", "CompanyId");
 
+                    b.HasOne("FinalProjectFb.Domain.Entities.Job", "Job")
+                        .WithOne("Image")
+                        .HasForeignKey("FinalProjectFb.Domain.Entities.Image", "JobId");
+
                     b.HasOne("FinalProjectFb.Domain.Entities.News", "News")
                         .WithMany("Images")
                         .HasForeignKey("NewsId");
@@ -700,6 +714,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Company");
+
+                    b.Navigation("Job");
 
                     b.Navigation("News");
                 });
@@ -800,6 +816,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>
                 {
                     b.Navigation("BasicFunctionsİnfos");
+
+                    b.Navigation("Image")
+                        .IsRequired();
 
                     b.Navigation("Requirementsİnfos");
                 });

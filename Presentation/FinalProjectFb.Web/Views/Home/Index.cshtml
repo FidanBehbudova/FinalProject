@@ -99,7 +99,7 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                    <a href="job_details.html"><img style="height:80px;width:80px" src="~/assets/img/icon/@item.Company.Image.Url" alt=""></a>
+                                    <a href="job_details.html"><img style="height:80px;width:80px" src="~/assets/img/icon/@item.Image.Url?" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
                                     <a href="job_details.html"><h4>@item.Name</h4></a>
@@ -149,46 +149,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle white-text text-center">
-                        <span>Apply process</span>
-                        <h2> How it works</h2>
+                        
+                        <h2> Companies</h2>
                     </div>
                 </div>
             </div>
             <!-- Apply Process Caption -->
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-process text-center mb-30">
-                        <div class="process-ion">
-                            <span class="flaticon-search"></span>
-                        </div>
-                        <div class="process-cap">
-                            <h5>1. Search a job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-process text-center mb-30">
-                        <div class="process-ion">
-                            <span class="flaticon-curriculum-vitae"></span>
-                        </div>
-                        <div class="process-cap">
-                            <h5>2. Apply for job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                @foreach (var item in Model.Companies)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-process text-center mb-30">
+                            <div class="company-img" style="border-radius: 50%; overflow: hidden; height: 150px; width: 150px; margin: auto;">
+                                <a href="job_details.html"><img style="width: 100%; height: 100%; object-fit: cover;" src="~/assets/img/icon/@item.Image.Url" alt=""></a>
+                            </div>
+                            <br />
+                            <div class="process-cap">
+                                <h5>@item.Name</h5>
+                                <a href="job_details.html">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-process text-center mb-30">
-                        <div class="process-ion">
-                            <span class="flaticon-tour"></span>
-                        </div>
-                        <div class="process-cap">
-                            <h5>3. Get your job</h5>
-                            <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
-                        </div>
-                    </div>
-                </div>
+
+
+                }
+                
             </div>
         </div>
     </div>
@@ -301,44 +286,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="~/assets/img/blog/home-blog1.jpg" alt="">
-                                <!-- Blog date -->
-                                <div class="blog-date text-center">
-                                    <span>24</span>
-                                    <p>Now</p>
+                @foreach (var item in Model.Newss)
+                {
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="home-blog-single mb-30">
+                            <div class="blog-img-cap">
+                                <div class="blog-img">
+                                    <img src="~/assets/img/blog/home-blog1.jpg" alt="">
+                                    <!-- Blog date -->
+                                    <div class="blog-date text-center">
+                                        <span>24</span>
+                                        <p>Now</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="blog-cap">
-                                <p>|   Properties</p>
-                                <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
-                                <a href="#" class="more-btn">Read more »</a>
+                                <div class="blog-cap">
+                                    <p>|   Properties</p>
+                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
+                                    <a href="#" class="more-btn">Read more »</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="home-blog-single mb-30">
-                        <div class="blog-img-cap">
-                            <div class="blog-img">
-                                <img src="~/assets/img/blog/home-blog2.jpg" alt="">
-                                <!-- Blog date -->
-                                <div class="blog-date text-center">
-                                    <span>24</span>
-                                    <p>Now</p>
-                                </div>
-                            </div>
-                            <div class="blog-cap">
-                                <p>| Properties</p>
-                                <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
-                                <a href="#" class="more-btn">Read more »</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                }
             </div>
         </div>
     </div>

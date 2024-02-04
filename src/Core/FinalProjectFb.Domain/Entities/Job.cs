@@ -9,7 +9,8 @@ namespace FinalProjectFb.Domain.Entities
 {
     public class Job:BaseNameableEntity
     {
-       
+        public int? ImageId { get; set; }
+        public Image Image { get; set; }
 
         public int? CompanyId { get; set; }
         public Company Company { get; set;}

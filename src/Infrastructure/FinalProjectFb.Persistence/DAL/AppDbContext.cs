@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFb.Persistence.DAL
 {
-    public class AppDbContext:IdentityDbContext<AppUser>
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options) 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<News> News { get; set; }
-        public DbSet<BasicFunctionsİnfo> BasicFunctionsİnfos  { get; set; }
+        public DbSet<BasicFunctionsİnfo> BasicFunctionsİnfos { get; set; }
         public DbSet<Requirementsİnfo> Requirementsİnfos { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Setting> Settings { get; set; }
@@ -49,6 +49,11 @@ namespace FinalProjectFb.Persistence.DAL
                 .HasOne(cc => cc.City)
                 .WithMany(c => c.CompanyCities)
                 .HasForeignKey(cc => cc.CityId);
+
+            modelBuilder.Entity<Job>()
+                .HasOne(j => j.Image)
+                .WithOne(i => i.Job)
+                .HasForeignKey<Image>(i => i.JobId);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
         }

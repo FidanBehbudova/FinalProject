@@ -29,12 +29,13 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         {
             List<Category> categories = await _category.GetAll().Include(c=>c.Jobs).ToListAsync();
             List<Job> jobs = await _job.GetAll()
+                .Include(j=>j.Image)
                 .Include(j=>j.Category)
                 .Include(j=>j.Company).ThenInclude(c=>c.Image)
                 .Include(j => j.Company).ThenInclude(c=>c.CompanyCities).ThenInclude(c=>c.City)
                 .ToListAsync();
             List<News> news = await _news.GetAll().ToListAsync();
-            List<Company> companies = await _company.GetAll().ToListAsync();
+            List<Company> companies = await _company.GetAll().Include(c=>c.Image).ToListAsync();
 
 
             HomeVM homeVM = new HomeVM
