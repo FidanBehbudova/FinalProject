@@ -16,18 +16,59 @@ namespace FinalProjectFb.Web.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Register([FromForm] RegisterVM registerVM)
-        //{
-        //    await _service.Register(registerVM);
-        //    return StatusCode(StatusCodes.Status204NoContent);
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterVM vm)
+        {
+            if (!ModelState.IsValid)
+            {
 
-        //[HttpPost]
-        //public async Task<IActionResult> Login([FromForm] LoginVM loginVM)
-        //{
+                return View(vm);
+            }
+            var result = await _service.Register(vm);
+            if (result.Any())
+            {
+                foreach (var item in result)
+                {
+                    ModelState.AddModelError(String.Empty, item);
+                    return View(vm);
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM vm)
+        {
+            if (!ModelState.IsValid)
+            {
 
-        //    return StatusCode(StatusCodes.Status200OK, await _service.Login(loginVM));
-        //}
+                return View(vm);
+            }
+            var result = await _service.Login(vm);
+            if (result.Any())
+            {
+                foreach (var item in result)
+                {
+                    ModelState.AddModelError(String.Empty, item);
+                    return View(vm);
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _service.Logout();
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> CreateRole()
+        {
+            await _service.CreateRoleAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }

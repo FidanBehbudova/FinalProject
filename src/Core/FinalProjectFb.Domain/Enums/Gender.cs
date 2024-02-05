@@ -8,7 +8,7 @@ namespace FinalProjectFb.Domain.Enums
 {
     public enum Gender
     {
-        Male,
+        Male=1,
         Female,
         Other
     }
