@@ -75,9 +75,28 @@
                             </div>
                             <div class="input-box">
                                 <i class="far fa-calendar-alt"></i>
-                                <input asp-for="Birthday" class="form-control" type="date" required>
+                                <input asp-for="Birthday" class="form-control" type="date" min="@DateTime.Now.AddYears(-18).ToString("yyyy-MM-dd")" required>
                                 <span class="text-danger" asp-validation-for="Birthday"></span>
                             </div>
+
+                            <script>
+                                // JavaScript ile yaş kontrolü
+                                var birthdayInput = document.querySelector('input[type="date"]');
+
+                                birthdayInput.addEventListener('change', function () {
+                                    var selectedDate = new Date(this.value);
+                                    var minDate = new Date();
+                                    minDate.setFullYear(minDate.getFullYear() - 18);
+
+                                    if (selectedDate > minDate) {
+                                        alert('18 yaşından küçük kişiler doğum tarihi seçemez.');
+                                        this.value = ''; // Tarihi temizleme (isteğe bağlı)
+                                    }
+                                });
+                            </script>
+
+
+
 
                             <div class="styled-select">
 

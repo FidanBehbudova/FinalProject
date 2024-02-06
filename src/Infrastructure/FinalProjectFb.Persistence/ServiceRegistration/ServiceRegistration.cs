@@ -42,15 +42,17 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
 				opt.Lockout.AllowedForNewUsers = true;
 			}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 			
-			services.AddScoped<ICategoryRepository, CategoryRepository>();
+			
 			services.AddScoped<IHomeService, HomeService>();
 			services.AddScoped<IUserService, UserService>();
-			
-
-			
+            services.AddScoped<ICategoryService, CategoryService>();
 
 
-			services.AddScoped<IJobRepository, JobRepository>();
+
+
+
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
 			services.AddScoped<INewsRepository, NewsRepository>();
 			services.AddScoped<ICompanyRepository, CompanyRepository>();
 

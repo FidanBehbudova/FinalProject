@@ -44,6 +44,11 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
 
         }
 
+        public async Task<bool> IsExist(Expression<Func<T, bool>> expression)
+        {
+            return await _dbSet.AnyAsync(expression);
+        }
+
 
         public IQueryable<T> GetOrder(Expression<Func<T, object>>? orderExpression = null, bool isDescending = false)
         {
@@ -63,7 +68,7 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             return query;
         }
 
-        public IQueryable<T> GetPaging(int skip = 0, int take = 0, bool ignoreQuery = false)
+        public IQueryable<T> GetPagination(int skip = 0, int take = 0, bool ignoreQuery = false, params string[] includes)
         {
             IQueryable<T> query = _context.Set<T>();
             if (skip != 0) query = query.Skip(skip);

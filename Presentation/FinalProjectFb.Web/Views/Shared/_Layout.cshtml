@@ -77,8 +77,16 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a asp-action="register" asp-controller="account" class="btn head-btn1">Register</a>
-                                    <a asp-action="login" asp-controller="account" class="btn head-btn2">Login</a>
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                        <a asp-action="register" asp-controller="account" class="btn head-btn1">Register</a>
+                                        <a asp-action="login" asp-controller="account" class="btn head-btn2">Login</a>
+                                    }
+                                    else
+                                    {
+                                        <i class="btn head-btn1">@User.Identity.Name</i>
+                                        <a asp-action="logout" asp-controller="account" class="btn head-btn2">Logout</a>
+                                    }
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,99 @@
+﻿@using FinalProjectFb.Application.ViewModels
+@using FinalProjectFb.Domain.Entities
+
+@model PaginateVM<Category>
+
+
+<div class="row g-0">
+    <div class="col-12 mb-5">
+        <div id="checkboxTable">
+            <div class="mb-4 mb-lg-3 bg-transparent no-shadow d-none d-lg-block">
+                <div class="row g-0">
+                    <div class="col-auto sw-11 d-none d-lg-flex"></div>
+                    <div class="col">
+                        <div class="ps-5 pe-4 h-100">
+                            <div class="row g-0 h-100 align-content-center custom-sort">
+                                <div class="col-lg-4 d-flex flex-column mb-lg-0 pe-3 d-flex">
+                                    <div class="text-muted text-small cursor-pointer sort" data-sort="name">TITLE</div>
+                                </div>
+                                <div class="col-lg-2 d-flex flex-column pe-1 justify-content-center">
+                                    <div class="text-muted text-small cursor-pointer sort" data-sort="email">STOCK</div>
+                                </div>
+                                <div class="col-lg-3 d-flex flex-column pe-1 justify-content-center">
+                                    <div class="text-muted text-small cursor-pointer sort" data-sort="phone">PRICE</div>
+                                </div>
+                                <div class="col-lg-2 d-flex flex-column pe-1 justify-content-center">
+                                    <div class="text-muted text-small cursor-pointer sort" data-sort="group">STATUS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @foreach (var item in Model.Items)
+            {
+                <div class="card mb-2">
+                    <div class="row g-0 h-100 sh-lg-9 position-relative">                       
+                        <div class="col py-4 py-lg-0">
+                            <div class="ps-5 pe-4 h-100">
+                                <div class="row g-0 h-100 align-content-center">
+                                    <a href="Products.Detail.html" class="col-11 col-lg-4 d-flex flex-column mb-lg-0 mb-3 pe-3 d-flex order-1 h-lg-100 justify-content-center">
+                                        Wooden Animal Toys
+                                        <div class="text-small text-muted text-truncate position">#2342</div>
+                                    </a>
+                                    <div class="col-12 col-lg-2 d-flex flex-column pe-1 mb-2 mb-lg-0 justify-content-center order-3">
+                                        <div class="lh-1 text-alternate">@item.Name</div>
+                                    </div>
+                                    <div class="col-12 col-lg-3 d-flex flex-column pe-1 mb-2 mb-lg-0 justify-content-center order-4">
+                                        <div class="lh-1 text-alternate">@item.Icon</div>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="pt-5">
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(Model.CurrentPage<=1 ? "disabled" : "active")">
+                    <a class="page-link " asp-route-page="@(Model.CurrentPage-1)" asp-action="index" asp-controller="lesson">Previous</a>
+                </li>
+                @for (int i = 0; i < Model.TotalPage; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage-1==i ? "btn-success active" : "")">
+                        <a class="page-link" asp-route-page="@(i+1)" asp-action="index" asp-controller="lesson">@(i + 1)</a>
+                    </li>
+                }
+                <li class="page-item @(Model.TotalPage==Model.CurrentPage ? "disabled" : "active")">
+                    <a class="page-link " asp-route-page="@(Model.CurrentPage+1)" asp-action="index" asp-controller="lesson">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="w-100 d-flex justify-content-center">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link shadow" href="#" tabindex="-1" aria-disabled="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="acorn-icons acorn-icons-chevron-left undefined"><path d="M13 16L7.35355 10.3536C7.15829 10.1583 7.15829 9.84171 7.35355 9.64645L13 4"></path></svg>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link shadow" href="#">1</a></li>
+                <li class="page-item"><a class="page-link shadow" href="#">2</a></li>
+                <li class="page-item"><a class="page-link shadow" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link shadow" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="acorn-icons acorn-icons-chevron-right undefined"><path d="M7 4L12.6464 9.64645C12.8417 9.84171 12.8417 10.1583 12.6464 10.3536L7 16"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
