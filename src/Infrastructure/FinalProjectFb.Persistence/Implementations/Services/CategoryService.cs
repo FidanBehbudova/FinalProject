@@ -35,6 +35,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             await _repository.AddAsync(new Category
             {
                 Name = vm.Name,
+                Icon= vm.Icon,
 
             });
             await _repository.SaveChangesAsync();
