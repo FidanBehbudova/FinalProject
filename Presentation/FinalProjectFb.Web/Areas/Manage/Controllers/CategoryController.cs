@@ -15,7 +15,7 @@ namespace FinalProjectFb.Web.Areas.Manage.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(int page = 1, int take = 1)
+        public async Task<IActionResult> Index(int page = 1, int take = 10)
         {
             PaginateVM<Category> vm = await _service.GetAllAsync(page, take);
             if (vm.Items == null) return NotFound();

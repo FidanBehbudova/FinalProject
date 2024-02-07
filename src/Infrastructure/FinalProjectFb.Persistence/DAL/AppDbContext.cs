@@ -33,13 +33,9 @@ namespace FinalProjectFb.Persistence.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Company>()
-            .HasOne(c => c.Image)
-            .WithOne(i => i.Company)
-            .HasForeignKey<Image>(i => i.CompanyId);
-            modelBuilder.Entity<CompanyCity>()
-            .HasKey(cc => new { cc.CompanyId, cc.CityId });
 
+            
+            modelBuilder.Entity<CompanyCity>().HasKey(cc => cc.Id);
             modelBuilder.Entity<CompanyCity>()
                 .HasOne(cc => cc.Company)
                 .WithMany(c => c.CompanyCities)
@@ -50,10 +46,7 @@ namespace FinalProjectFb.Persistence.DAL
                 .WithMany(c => c.CompanyCities)
                 .HasForeignKey(cc => cc.CityId);
 
-            modelBuilder.Entity<Job>()
-                .HasOne(j => j.Image)
-                .WithOne(i => i.Job)
-                .HasForeignKey<Image>(i => i.JobId);
+            
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
         }

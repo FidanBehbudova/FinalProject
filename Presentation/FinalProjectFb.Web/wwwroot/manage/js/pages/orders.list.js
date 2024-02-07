@@ -1,1 +1,0 @@
-class OrdersList{constructor(){"undefined"!=typeof Checkall?this._initCheckAll():console.error("[CS] Checkall is undefined.")}_initCheckAll(){new Checkall(document.querySelector(".check-all-container .btn-custom-control"))}}

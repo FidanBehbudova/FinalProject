@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFb.Domain.Entities
 {
-    public class CompanyCity
+    public class CompanyCity:BaseEntity
     {
         public int? CompanyId { get; set; }
         public Company Company { get; set; }

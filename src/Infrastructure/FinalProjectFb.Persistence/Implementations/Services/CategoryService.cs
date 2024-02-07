@@ -58,30 +58,35 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             return vm;
         }
 
+       
+
         public async Task<bool> UpdateAsync(int id, UpdateCategoryVM vm, ModelStateDictionary modelstate)
-        {
-            if (id < 1) throw new ArgumentOutOfRangeException("id");
-            if (!modelstate.IsValid) return false;
-            Category exist = await _repository.GetByIdAsync(id);
-            if (exist == null) throw new Exception("mot found");
-            if (await _repository.IsExist(l => l.Name == vm.Name))
-            {
-                modelstate.AddModelError("Name", "This Category is already exist");
-                return false;
-            }
-           
-           
-            exist.Name = vm.Name.Trim();
-            exist.Icon = vm.Icon;
-           
-            _repository.Update(exist);
-            await _repository.SaveChangesAsync();
-            return true;
-        }
+		{
+			if (id < 1) throw new ArgumentOutOfRangeException("id");
+			if (!modelstate.IsValid) return false;
 
-      
+			Category exist = await _repository.GetByIdAsync(id);
+			if (exist == null) throw new Exception("Not found");
 
-        public async Task<UpdateCategoryVM> UpdatedAsync(int id, UpdateCategoryVM vm)
+			
+			if (await _repository.IsExist(l => l.Name == vm.Name && l.Id != id))
+			{
+				modelstate.AddModelError("Name", "This Category is already exist");
+				return false;
+			}
+
+			exist.Name = vm.Name.Trim();
+			exist.Icon = vm.Icon;
+
+			_repository.Update(exist);
+			await _repository.SaveChangesAsync();
+			return true;
+		}
+
+
+
+
+		public async Task<UpdateCategoryVM> UpdatedAsync(int id, UpdateCategoryVM vm)
         {
             if (id < 1) throw new ArgumentOutOfRangeException("id");
             Category exist = await _repository.GetByIdAsync(id);

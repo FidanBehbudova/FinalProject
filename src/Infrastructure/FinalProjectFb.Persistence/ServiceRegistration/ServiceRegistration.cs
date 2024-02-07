@@ -46,11 +46,12 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
 			services.AddScoped<IHomeService, HomeService>();
 			services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICityService, CityService>();
 
 
 
 
-
+            services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
 			services.AddScoped<INewsRepository, NewsRepository>();

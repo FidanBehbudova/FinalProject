@@ -1,1 +1,0 @@
-class ProductsList{constructor(){"undefined"!=typeof Checkall?this._initCheckAll():console.error("[CS] Checkall is undefined.")}_initCheckAll(){new Checkall(document.querySelector(".check-all-container-checkbox-click .btn-custom-control"),{clickSelector:".form-check"})}}

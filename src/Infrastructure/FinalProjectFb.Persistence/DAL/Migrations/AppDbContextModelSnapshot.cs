@@ -241,9 +241,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ImageId")
-                        .HasColumnType("int");
-
                     b.Property<string>("InstagramLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -277,15 +274,38 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.CompanyCity", b =>
                 {
-                    b.Property<int?>("CompanyId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("CityId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.HasKey("CompanyId", "CityId");
+                    b.Property<int?>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CityId");
+
+                    b.HasIndex("CompanyId");
 
                     b.ToTable("CompanyCities");
                 });
@@ -332,13 +352,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("CompanyId")
-                        .IsUnique()
-                        .HasFilter("[CompanyId] IS NOT NULL");
+                    b.HasIndex("CompanyId");
 
-                    b.HasIndex("JobId")
-                        .IsUnique()
-                        .HasFilter("[JobId] IS NOT NULL");
+                    b.HasIndex("JobId");
 
                     b.HasIndex("NewsId");
 
@@ -379,9 +395,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
-
-                    b.Property<int?>("ImageId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -700,12 +713,12 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
-                        .WithOne("Image")
-                        .HasForeignKey("FinalProjectFb.Domain.Entities.Image", "CompanyId");
+                        .WithMany("Images")
+                        .HasForeignKey("CompanyId");
 
                     b.HasOne("FinalProjectFb.Domain.Entities.Job", "Job")
-                        .WithOne("Image")
-                        .HasForeignKey("FinalProjectFb.Domain.Entities.Image", "JobId");
+                        .WithMany("Images")
+                        .HasForeignKey("JobId");
 
                     b.HasOne("FinalProjectFb.Domain.Entities.News", "News")
                         .WithMany("Images")
@@ -809,16 +822,14 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                 {
                     b.Navigation("CompanyCities");
 
-                    b.Navigation("Image")
-                        .IsRequired();
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>
                 {
                     b.Navigation("BasicFunctionsİnfos");
 
-                    b.Navigation("Image")
-                        .IsRequired();
+                    b.Navigation("Images");
 
                     b.Navigation("Requirementsİnfos");
                 });

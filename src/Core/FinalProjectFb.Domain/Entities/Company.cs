@@ -10,8 +10,8 @@ namespace FinalProjectFb.Domain.Entities
 {
     public class Company : BaseNameableEntity
     {
-        public int? ImageId { get; set; }
-        public Image Image { get; set; }
+        public List<Image>? Images { get; set; }
+
         public string Description { get; set; }
         public string FacebookLink { get; set; }
         public string InstagramLink { get; set; }

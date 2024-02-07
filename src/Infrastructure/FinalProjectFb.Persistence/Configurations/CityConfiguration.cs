@@ -13,7 +13,7 @@ namespace FinalProjectFb.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<City> builder)
         {
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(25);
             builder.HasIndex(x => x.Name).IsUnique();
         }
     }
