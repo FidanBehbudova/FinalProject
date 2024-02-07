@@ -47,10 +47,12 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
 			services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICityService, CityService>();
+            services.AddScoped<ISettingService, SettingService>();
 
 
 
 
+            services.AddScoped<ISettingRepository, SettingRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
