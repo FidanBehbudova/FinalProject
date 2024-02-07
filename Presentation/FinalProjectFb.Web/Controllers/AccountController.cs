@@ -69,6 +69,11 @@ namespace FinalProjectFb.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public async Task<IActionResult> CreateAdminRole()
+        {
+            await _service.CreateAdminRoleAsync();
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }

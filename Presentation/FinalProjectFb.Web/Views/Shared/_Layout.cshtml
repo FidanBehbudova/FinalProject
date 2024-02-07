@@ -86,8 +86,18 @@
                                     {
                                         <i class="btn head-btn1">@User.Identity.Name</i>
                                         <a asp-action="logout" asp-controller="account" class="btn head-btn2">Logout</a>
+
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <a asp-action="index" asp-controller="dashboard" asp-area="manage" class="btn head-btn2">Admin</a>
+                                        }   
+                                        @if(User.IsInRole("Member"))
+                                        {
+                                            <a asp-action="index" asp-controller="" class="btn head-btn2">Creater</a>
+                                        }
                                     }
                                 </div>
+
                             </div>
                         </div>
                         <!-- Mobile Menu -->
