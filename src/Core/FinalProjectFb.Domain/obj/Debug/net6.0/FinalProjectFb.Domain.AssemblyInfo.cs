@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinalProjectFb.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63d665e4aa4a5082f67f3b8974642583abc7794d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8da12e29f890d2a272e8bff6df2b756639ebe681")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinalProjectFb.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinalProjectFb.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,5 +14,7 @@ namespace FinalProjectFb.Domain.Entities
         public string Surname { get; set; }
         public Gender Gender { get; set; }
         public DateTime Birthday { get; set; }
+        
+
     }
 }

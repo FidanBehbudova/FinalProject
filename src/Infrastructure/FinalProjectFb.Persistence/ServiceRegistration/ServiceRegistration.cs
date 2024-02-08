@@ -42,8 +42,9 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
 				opt.Lockout.AllowedForNewUsers = true;
 			}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 			
-			
-			services.AddScoped<IHomeService, HomeService>();
+			services.AddScoped<IJobService, JobService>();
+
+            services.AddScoped<IHomeService, HomeService>();
 			services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICityService, CityService>();

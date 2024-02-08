@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinalProjectFb.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+825833f5ce9d97f7044cca56499b236b0646686c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8da12e29f890d2a272e8bff6df2b756639ebe681")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinalProjectFb.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinalProjectFb.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

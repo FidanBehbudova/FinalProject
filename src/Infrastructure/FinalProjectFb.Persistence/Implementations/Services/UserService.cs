@@ -116,6 +116,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 str.Add("Username, Email or Password was wrong");
                 return str;
             }
+            
             return str;
         }
         public async Task Logout()

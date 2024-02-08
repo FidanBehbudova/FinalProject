@@ -18,6 +18,7 @@ namespace FinalProjectFb.Application.Abstractions.Repositories.Generic
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes);
         Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task<bool> IsExist(Expression<Func<T, bool>> expression);
+     
         Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);

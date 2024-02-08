@@ -99,10 +99,10 @@
                         <div class="single-job-items mb-30">
                             <div class="job-items">
                                 <div class="company-img">
-                                   @*  <a href="job_details.html"><img style="height:80px;width:80px" src="~/assets/img/icon/@item." alt=""></a> *@
+                                    <a href="job_details.html"><img style="height:80px;width:80px" src="~/assets/img/icon/@item.Images.FirstOrDefault()?.Url" alt=""></a>
                                 </div>
                                 <div class="job-tittle">
-                                    <a href="job_details.html"><h4>@item.Name</h4></a>
+                                    <a asp-action="detail" asp-controller="job" asp-route-id="@item.Id"><h4>@item.Name</h4></a>
                                     <ul>
                                         <li>@item.Category.Name</li>
                                         <li><i class="fas fa-map-marker-alt"></i>@item.Company.CompanyCities.FirstOrDefault(c=>c.City.Id==c.CityId)?.City.Name</li>

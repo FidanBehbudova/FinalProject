@@ -21,7 +21,6 @@ namespace FinalProjectFb.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 return View(vm);
             }
             var result = await _service.Register(vm);
@@ -44,20 +43,33 @@ namespace FinalProjectFb.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-
                 return View(vm);
             }
+
             var result = await _service.Login(vm);
+
             if (result.Any())
             {
                 foreach (var item in result)
                 {
                     ModelState.AddModelError(String.Empty, item);
-                    return View(vm);
                 }
+
+               
+                return View(vm);
             }
-            return RedirectToAction("Index", "Home");
+
+            
+            if (User.IsInRole("Admin"))
+            {               
+                return RedirectToAction("Index", "Home");
+            }
+          
+            return RedirectToAction("Index", "Dashboard", new { Area = "manage" });
         }
+
+
+
         public async Task<IActionResult> Logout()
         {
             await _service.Logout();

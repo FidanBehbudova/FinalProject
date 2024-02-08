@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFb.Persistence.Configurations
 {
-    internal class JoboConfiguration : IEntityTypeConfiguration<Job>
+    internal class JobConfiguration : IEntityTypeConfiguration<Job>
     {
         public void Configure(EntityTypeBuilder<Job> builder)
         {

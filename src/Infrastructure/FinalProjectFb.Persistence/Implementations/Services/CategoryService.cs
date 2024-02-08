@@ -75,7 +75,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 				return false;
 			}
 
-			exist.Name = vm.Name.Trim();
+			exist.Name = vm.Name;
 			exist.Icon = vm.Icon;
 
 			_repository.Update(exist);

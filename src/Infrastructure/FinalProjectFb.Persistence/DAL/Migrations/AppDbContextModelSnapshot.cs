@@ -203,8 +203,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
@@ -332,6 +332,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsPrimary")
                         .HasColumnType("bit");
 
                     b.Property<int?>("JobId")
