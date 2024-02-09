@@ -12,16 +12,16 @@ namespace FinalProjectFb.Domain.Entities
         public List<Image>? Images { get; set; }
 
         public int? CompanyId { get; set; }
-        public Company Company { get; set;}
+        public Company Company { get; set; }
 
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
 
         public DateTime Deadline { get; set; }
 
-       
+
         public List<Requirementsİnfo> Requirementsİnfos { get; set; }
-      
+
         public List<BasicFunctionsİnfo> BasicFunctionsİnfos { get; set; }
 
 
@@ -30,7 +30,7 @@ namespace FinalProjectFb.Domain.Entities
         public string Experience { get; set; }
 
         public string Vacancy { get; set; }
-        public DateTime PostedDate { get; set; }
+      
         public DateTime DiscontinuationDate { get; set; }
 
 

@@ -414,9 +414,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PostedDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal(6,2)");
 

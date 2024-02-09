@@ -10,6 +10,6 @@ namespace FinalProjectFb.Application.Abstractions.Repositories
 {
     public interface IJobRepository : IRepository<Job>
     {
-
+       
     }
 }

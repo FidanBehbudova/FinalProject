@@ -11,7 +11,7 @@ namespace FinalProjectFb.Domain.Entities
     {
         public string Url { get; set; }
         public int? CompanyId { get; set; }
-        public Company Company { get; set;}
+        public Company Company { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
         public bool? IsPrimary { get; set; }

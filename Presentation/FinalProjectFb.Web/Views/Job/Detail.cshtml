@@ -1,11 +1,12 @@
 ﻿@using FinalProjectFb.Application.ViewModels
 @model JobDetailVM
 
+
 <main>
 
     <!-- Hero Area Start-->
     <div class="slider-area ">
-        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="/assets/img/hero/about.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -32,7 +33,7 @@
                         <div class="job-items">
 
                             <div class="company-img company-img-details">
-                                <a href="#"><img src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault(i=>i.IsPrimary==null).Url" alt=""></a>
+                                <a href="#"><img style="height:100px;width:100px" src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault(i=>i.IsPrimary==null).Url" alt=""></a>
                             </div>
 
                             <div class="job-tittle">
@@ -40,8 +41,8 @@
                                     <h4>@Model.Job.Name</h4>
                                 </a>
                                 <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                                    <li>@Model.Job.Category.Name</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>@Model.Job.Company.CompanyCities.FirstOrDefault(c => c.City.Id == c.CityId)?.City.Name</li>
                                     <li>$@Model.Job.Salary</li>
                                 </ul>
                             </div>
@@ -94,12 +95,56 @@
                             <h4>Job Overview</h4>
                         </div>
                         <ul>
-                            <li>Posted date : <span>@Model.Job.PostedDate</span></li>
-                          @*   <li>Location : <span>@Model.Job.Company.CompanyCities.FirstOrDefault(c => c.CompanyId == c.Company.Id).City.Name</span></li> *@
+                            <li>Posted date : <span>
+                                    @{
+                                        TimeSpan difference = DateTime.Now - Model.Job.CreatedAt;
+
+                                        string timedifference = "";
+                                        if (difference.TotalDays >= 1)
+                                        {
+                                            timedifference = $"{(int)difference.TotalDays} days ago";
+                                        }
+                                        else if (difference.TotalHours >= 1)
+                                        {
+                                            timedifference = $"{(int)difference.TotalHours} hours ago";
+                                        }
+                                        else
+                                        {
+                                            timedifference = $"{(int)difference.TotalMinutes} minutes ago";
+                                        }
+                                    }
+
+                                    @timedifference
+                                </span>
+                            </li>
+                            @*   <li>Location : <span>@Model.Job.Company.CompanyCities.FirstOrDefault(c => c.CompanyId == c.Company.Id).City.Name</span></li> *@
                             <li>Vacancy : <span>@Model.Job.Vacancy</span></li>
                             <li>Job nature : <span>@Model.Job.JobNature</span></li>
                             <li>Salary :  <span>$@Model.Job.Salary</span></li>
-                            <li>Discontinuation Date : <span>@Model.Job.DiscontinuationDate</span></li>
+                            <li>
+                                Discontinuation Date : <span>
+                                    @{
+                                        TimeSpan differencce = Model.Job.DiscontinuationDate-DateTime.Now ;
+
+                                        string timedifferencce = "";
+                                        if (differencce.TotalDays >= 1)
+                                        {
+                                            timedifferencce = $"{(int)differencce.TotalDays} days later";
+                                        }
+                                        else if (difference.TotalHours >= 1)
+                                        {
+                                            timedifferencce = $"{(int)differencce.TotalHours} hours later";
+                                        }
+                                        else
+                                        {
+                                            timedifferencce = $"{(int)differencce.TotalMinutes} minutes later";
+                                        }
+                                    }
+
+                                    @timedifferencce
+                                </span>
+                            </li>
+
                         </ul>
                         <div class="apply-btn2">
                             <a href="#" class="btn">Apply Now</a>
@@ -115,7 +160,7 @@
                         <ul>
                             <li>Name: <span>@Model.Job.Company.Name </span></li>
                             <li>Web : <span>@Model.Job.Company.WebsiteLink</span></li>
-                            <li>Email: <span>@Model.Job.Company.GmailLink</span></li>
+                            <li>Email: <span>@Model.Job.Company.InstagramLink</span></li>
                         </ul>
                     </div>
                 </div>
@@ -131,11 +176,11 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
+                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
                             </div>
                             <div class="services-cap">
                                 <h5><a href="job_listing.html">@item.Name</a></h5>
-                                <span>@item?.Company.Name</span>
+                                <span>@(item?.Company?.Name)</span>
                             </div>
                         </div>
                     </div>
@@ -154,11 +199,11 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="company-img">
-                                <a href="job_details.html"><img src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
+                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
                             </div>
                             <div class="services-cap">
                                 <h5><a href="job_listing.html">@item.Name</a></h5>
-                                <span>@item.Company.Name</span>
+                                <span>@item?.Company?.Name</span>
                             </div>
                         </div>
                     </div>

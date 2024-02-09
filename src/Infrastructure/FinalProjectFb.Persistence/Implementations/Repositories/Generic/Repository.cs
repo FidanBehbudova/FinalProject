@@ -83,7 +83,7 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             if (ignoreQuery) query = query.IgnoreQueryFilters();
             if (!isTracking) query = query.AsNoTracking();
             query = _addIncludes(query, includes);
-
+            
             return await query.FirstOrDefaultAsync();
         }
 

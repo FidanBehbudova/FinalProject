@@ -20,7 +20,7 @@ namespace FinalProjectFb.Application.ViewModels
         public Category Category { get; set; }
 
         public DateTime Deadline { get; set; }
-
+        public DateTime CreatedAt { get; set; }
 
         public List<Requirementsİnfo> Requirementsİnfos { get; set; }
 
@@ -32,7 +32,7 @@ namespace FinalProjectFb.Application.ViewModels
         public string Experience { get; set; }
 
         public string Vacancy { get; set; }
-        public DateTime PostedDate { get; set; }
+       
         public DateTime DiscontinuationDate { get; set; }
 
     }

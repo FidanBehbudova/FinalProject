@@ -10,5 +10,6 @@ namespace FinalProjectFb.Application.Abstractions.Services
     public interface IJobService
     {
         Task<JobDetailVM> DetailAsync(int id);
+        //Task<JobItemVM> SortingAsync(int key = 1, int page = 1, int id=1);
     }
 }

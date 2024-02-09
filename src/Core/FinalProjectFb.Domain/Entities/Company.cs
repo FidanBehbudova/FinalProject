@@ -17,8 +17,9 @@ namespace FinalProjectFb.Domain.Entities
         public string InstagramLink { get; set; }
         public string WebsiteLink { get; set; }
         public string TwitterLink { get; set; }
-        public string GmailLink { get; set; }      
+        public string GmailLink { get; set; }
         public ICollection<CompanyCity> CompanyCities { get; set; }
+
 
     }
 }
