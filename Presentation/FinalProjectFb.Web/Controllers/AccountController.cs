@@ -1,5 +1,6 @@
 ﻿using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.ViewModels.Users;
+using FinalProjectFb.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectFb.Web.Controllers
@@ -59,15 +60,23 @@ namespace FinalProjectFb.Web.Controllers
                 return View(vm);
             }
 
-            
-            //if (User.IsInRole("Admin"))
-            //{
-            //    return RedirectToAction("Index", "Dashboard", new { Area = "manage" });
-            //}
 
-          
-          
-            return RedirectToAction("Index", "Home");
+            if (User.IsInRole(UserRole.Creater.ToString()))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else if (User.IsInRole(UserRole.Member.ToString()))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index", "manage");
+            }
+
+
+
+           
         }
 
 

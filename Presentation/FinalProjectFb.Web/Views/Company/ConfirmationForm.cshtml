@@ -82,7 +82,7 @@
             <div class="formbold-input-flex">
                 <div>
                     <label asp-for="Photo" class="formbold-form-label"> Photo </label>
-                    <input accept="image/*"
+                    <input 
                            asp-for="Photo"
                            class="formbold-form-input" />
                     <span asp-validation-for="Photo" class="text-danger"></span>
@@ -92,17 +92,10 @@
             <div class="formbold-input-flex">
                 <div class="form-group">
                     <label asp-for="CityIds">City</label>
-                    @if (Model.Cities != null && Model.Cities.Any())
-                    {
+                
                         <select asp-for="CityIds" asp-items="new SelectList(Model.Cities, nameof(City.Id), nameof(City.Name))">
                             <option selected disabled>Select one</option>
-                        </select>
-
-                    }
-                    else
-                    {
-                        <p>No cities available.</p>
-                    }
+                        </select>               
                     <span asp-validation-for="CityIds" class="text-danger"> </span>
                 </div>
 

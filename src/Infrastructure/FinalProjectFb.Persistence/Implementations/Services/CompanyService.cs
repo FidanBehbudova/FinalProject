@@ -37,7 +37,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 return false;
             }
 
-            var citiesVM = await GetCitiesForConfirmationFormAsync();
+          
 
             Image photo = new Image
             {
@@ -63,7 +63,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             {
                 foreach (var item in vm.CityIds)
                 {
-                    if (!citiesVM.Cities.Any(c => c.Id == item))
+                    if (!await _cityRepository.IsExistAsync(c => c.Id == item))
                     {
                         modelstate.AddModelError(String.Empty, "This city does not exist");
                         return false;
@@ -82,14 +82,10 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 
 
 
-        public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync()
+        public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM)
         {
-            var cities = await _cityRepository.GetAll().ToListAsync();
-
-            return new ConfirmationFormVM
-            {
-                Cities = cities
-            };
+            confirmationFormVM.Cities=await _cityRepository.GetAll().ToListAsync();
+            return confirmationFormVM;
         }
 
 

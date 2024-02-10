@@ -11,6 +11,6 @@ namespace FinalProjectFb.Application.Abstractions.Services
     public interface ICompanyService
     {
         Task<bool> GetConfirmationFormAsync(ConfirmationFormVM vm,ModelStateDictionary modelstate);
-        Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync();
+        Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM);
     }
 }
