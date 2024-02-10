@@ -31,7 +31,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             List<Job> jobs = await _job.GetAll()
                 .Include(j=>j.Images)
                 .Include(j=>j.Category)
-                .Include(j=>j.Company)
+                
                 .Include(j => j.Company).ThenInclude(c=>c.CompanyCities).ThenInclude(c=>c.City)
                 .ToListAsync();
             List<News> news = await _news.GetAll().ToListAsync();

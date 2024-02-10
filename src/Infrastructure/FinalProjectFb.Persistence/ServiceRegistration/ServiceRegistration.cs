@@ -49,6 +49,9 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<ICompanyService, CompanyService>();
+
+
 
 
 

@@ -57,7 +57,8 @@ namespace FinalProjectFb.Application.ViewModels.Users
         public DateTime Birthday { get; set; }
 
         [Required(ErrorMessage = "You have to fill in this section.")]
-        public string SelectedRole { get; set; }
+        public UserRole Role { get; set; }
+      
 
 
     }

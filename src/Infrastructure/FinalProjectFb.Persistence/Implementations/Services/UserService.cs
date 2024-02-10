@@ -73,7 +73,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             await _signInManager.SignInAsync(user, isPersistent: false);
             if (user != null)
             {
-                await AssignRoleToUser(user, vm.SelectedRole);
+                await AssignRoleToUser(user, vm.Role.ToString());
             }
             return str;
 

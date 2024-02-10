@@ -10,6 +10,10 @@ namespace FinalProjectFb.Domain.Entities
 {
     public class Company : BaseNameableEntity
     {
+        public Company()
+        {
+            IsDeleted = null;
+        }
         public List<Image>? Images { get; set; }
 
         public string Description { get; set; }

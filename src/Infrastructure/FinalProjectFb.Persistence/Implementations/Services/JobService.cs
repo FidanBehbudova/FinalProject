@@ -32,20 +32,16 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         {
             if (id < 1) throw new ArgumentOutOfRangeException("id");
 
-            Job job = await _repository.GetByIdAsync(id, includes: new string[] { nameof(Job.Company),"Company.CompanyCities"
-                ,nameof(Job.Category)
-                ,nameof(Job.Images) 
-                ,nameof(Job.BasicFunctionsİnfos)
-                ,nameof(Job.Requirementsİnfos) });
-            
-            
+            Job job = await _repository.GetByIdAsync(id, includes: new string[] {"Company", "Company.CompanyCities", "Company.CompanyCities.City", "Category","Images", "BasicFunctionsİnfos" , "Requirementsİnfos" });
+
+           
             JobItemVM jobItemVM = new JobItemVM
             {
                 Vacancy = job.Vacancy,
                 JobNature = job.JobNature,
                 BasicFunctionsİnfos = job.BasicFunctionsİnfos,
                 Requirementsİnfos = job.Requirementsİnfos,
-                Name = job.Name,
+                Name = job.Name, 
                 CreatedAt = job.CreatedAt,
                 Category = job.Category,
                 Deadline = job.Deadline,
@@ -54,6 +50,9 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 Experience = job.Experience,
                 Company = job.Company,
                 Images = job.Images,
+                CompanyId = job.CompanyId,
+                CategoryId = job.CategoryId,
+                
 
             };
             if (job is null) throw new Exception("Not found");

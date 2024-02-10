@@ -60,12 +60,14 @@ namespace FinalProjectFb.Web.Controllers
             }
 
             
-            if (User.IsInRole("Admin"))
-            {               
-                return RedirectToAction("Index", "Home");
-            }
+            //if (User.IsInRole("Admin"))
+            //{
+            //    return RedirectToAction("Index", "Dashboard", new { Area = "manage" });
+            //}
+
           
-            return RedirectToAction("Index", "Dashboard", new { Area = "manage" });
+          
+            return RedirectToAction("Index", "Home");
         }
 
 

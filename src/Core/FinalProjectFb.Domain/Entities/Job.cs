@@ -17,7 +17,9 @@ namespace FinalProjectFb.Domain.Entities
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
 
+       
         public DateTime Deadline { get; set; }
+        
 
 
         public List<Requirementsİnfo> Requirementsİnfos { get; set; }

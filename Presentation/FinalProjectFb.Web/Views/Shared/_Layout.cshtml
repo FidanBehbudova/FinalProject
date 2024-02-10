@@ -91,9 +91,9 @@
                                         {
                                             <a asp-action="index" asp-controller="dashboard" asp-area="manage" class="btn head-btn2">Admin</a>
                                         }   
-                                        @if(User.IsInRole("Member"))
+                                        else if(User.IsInRole("Creater"))
                                         {
-                                            <a asp-action="index" asp-controller="" class="btn head-btn2">Creater</a>
+                                            <a asp-action="confirmationform" asp-controller="company" class="btn head-btn2">Creater</a>
                                         }
                                     }
                                 </div>

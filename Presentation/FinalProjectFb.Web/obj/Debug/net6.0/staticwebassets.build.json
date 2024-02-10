@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lz+7BbUrRFWhL8Ql0qje+08rqrpiYoQVAoXoi00mCB0=",
+  "Hash": "U6fHikpeSSWxGUGAutp2cY1tLY3qofJ6vBkOAMNoBk4=",
   "Source": "FinalProjectFb.Web",
   "BasePath": "_content/FinalProjectFb.Web",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\comment\\comment_3.png"
+    },
+    {
+      "Identity": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\company-concept-illustration_114360-2581.jpg",
+      "SourceId": "FinalProjectFb.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\",
+      "BasePath": "_content/FinalProjectFb.Web",
+      "RelativePath": "assets/img/company-concept-illustration_114360-2581.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\company-concept-illustration_114360-2581.jpg"
     },
     {
       "Identity": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\elements\\a.jpg",
