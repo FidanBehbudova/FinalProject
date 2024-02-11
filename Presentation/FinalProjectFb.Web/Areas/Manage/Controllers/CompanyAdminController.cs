@@ -2,6 +2,7 @@
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectFb.Web.Areas.Manage.Controllers
 {
@@ -20,5 +21,18 @@ namespace FinalProjectFb.Web.Areas.Manage.Controllers
             if (vm.Items == null) return NotFound();
             return View(vm);
         }
+
+        
+        public async Task<IActionResult> Detail(int id)
+        {
+            return View(await _service.DetailAsync(id));
+        }
+
+        //[HttpPost]
+        //public IActionResult UpdateIsDeleted(int id)
+        //{
+           
+        //}
+
     }
 }

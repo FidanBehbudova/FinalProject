@@ -15,5 +15,6 @@ namespace FinalProjectFb.Application.Abstractions.Services
         Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM);
 
         Task<PaginateVM<Company>> GetAllAsync(int page = 1, int take = 10);
+        Task<CompanyDetailVM> DetailAsync(int id);
     }
 }

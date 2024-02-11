@@ -58,18 +58,20 @@ namespace FinalProjectFb.Web.Controllers
                 return View(vm);
             }
 
-            if (User.IsInRole(UserRole.Creater.ToString()))
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else if (User.IsInRole(UserRole.Member.ToString()))
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                return RedirectToAction("Index", "manage");
-            }
+            //if (User.IsInRole(UserRole.Creater.ToString()))
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else if (User.IsInRole(UserRole.Member.ToString()))
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Index", "manage");
+            //}
+
+            return RedirectToAction("Index", "Home");
            
         }
 

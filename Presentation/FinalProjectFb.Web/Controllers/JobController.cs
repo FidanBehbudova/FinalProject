@@ -13,8 +13,7 @@ namespace FinalProjectFb.Web.Controllers
             _service = service;
         }
         public async Task<IActionResult> Detail(int id)
-        {
-            
+        {           
             return View(await _service.DetailAsync(id));
         }
     }

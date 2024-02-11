@@ -110,8 +110,38 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             };
             return vm;
         }
+        public async Task<CompanyDetailVM> DetailAsync(int id)
+        {
+            if (id < 1) throw new ArgumentOutOfRangeException("id");
+
+            Company company = await _repository.GetByIdAsync(id, includes: new string[] {"CompanyCities","Images" });
 
 
+            CompanyItemVM companyItemVM = new CompanyItemVM
+            {
+              
+                Name = company.Name,               
+                Images = company.Images,             
+                FacebookLink = company.FacebookLink,
+                TwitterLink = company.TwitterLink,
+                InstagramLink = company.InstagramLink,
+                GmailLink = company.GmailLink,
+                WebsiteLink = company.WebsiteLink,
+                Description = company.Description,
+                CompanyCities= company.CompanyCities,
+
+            };
+            if (company is null) throw new Exception("Not found");           
+
+            CompanyDetailVM detailVM = new CompanyDetailVM
+            {
+               
+                Company = companyItemVM
+            };
+            return detailVM;
+        }
+
+        
         //public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM)
         //{
         //    confirmationFormVM.Cities=await _cityRepository.GetAll().ToListAsync();
