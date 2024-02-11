@@ -11,6 +11,7 @@ namespace FinalProjectFb.Application.ViewModels
 {
     public class ConfirmationFormVM
     {
+       
         //public List<Image>? Images { get; set; }
         //[Required]
         //public List<CompanyCity>? CompanyCities { get; set; }
@@ -19,7 +20,7 @@ namespace FinalProjectFb.Application.ViewModels
         public IFormFile Photo { get; set; }
         public ICollection<int>? CityIds { get; set; }
         public ICollection<City>? Cities { get; set; }
-        [Required]
+       
 
         public bool? IsDeleted { get; set; }
         [Required]

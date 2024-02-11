@@ -401,6 +401,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\hero\\h1_hero.jpg"
     },
     {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\0d39022e-fdff-409f-824d-c02a150ecfb0help.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\0d39022e-fdff-409f-824d-c02a150ecfb0help.png"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\175ed532-d6ee-4089-99ca-6b9f0a936107help.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\175ed532-d6ee-4089-99ca-6b9f0a936107help.png"
+    },
+    {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\economist.png",
       "PackagePath": "staticwebassets\\assets\\img\\icon\\economist.png"
     },

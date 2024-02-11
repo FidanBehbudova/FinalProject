@@ -1,4 +1,5 @@
 ﻿using FinalProjectFb.Application.ViewModels;
+using FinalProjectFb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace FinalProjectFb.Application.Abstractions.Services
     {
         Task<bool> GetConfirmationFormAsync(ConfirmationFormVM vm,ModelStateDictionary modelstate);
         Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM);
+
+        Task<PaginateVM<Company>> GetAllAsync(int page = 1, int take = 10);
     }
 }

@@ -54,12 +54,9 @@ namespace FinalProjectFb.Web.Controllers
                 foreach (var item in result)
                 {
                     ModelState.AddModelError(String.Empty, item);
-                }
-
-               
+                }               
                 return View(vm);
             }
-
 
             if (User.IsInRole(UserRole.Creater.ToString()))
             {
@@ -73,9 +70,6 @@ namespace FinalProjectFb.Web.Controllers
             {
                 return RedirectToAction("Index", "manage");
             }
-
-
-
            
         }
 

@@ -15,20 +15,22 @@ namespace FinalProjectFb.Web.Controllers
         public async Task<IActionResult> ConfirmationForm()
         {
             ConfirmationFormVM confirmationFormVM = new ConfirmationFormVM();
+            confirmationFormVM.CityIds = new List<int>(); // Burada CityIds'i başlatın
             confirmationFormVM = await _service.GetCitiesForConfirmationFormAsync(confirmationFormVM);
             return View(confirmationFormVM);
         }
 
+
         [HttpPost]
         public async Task<IActionResult> ConfirmationForm(ConfirmationFormVM confirmationFormVM)
         {
-           
             if (await _service.GetConfirmationFormAsync(confirmationFormVM, ModelState))
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index","Home");
             return View(await _service.GetCitiesForConfirmationFormAsync(confirmationFormVM));
         }
 
-     
+
+
 
     }
 }

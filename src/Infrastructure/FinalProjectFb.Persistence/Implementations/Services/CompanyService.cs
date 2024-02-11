@@ -80,13 +80,43 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             return true;
         }
 
-
-
         public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM)
         {
-            confirmationFormVM.Cities=await _cityRepository.GetAll().ToListAsync();
-            return confirmationFormVM;
+            try
+            {
+                var cityList = _cityRepository.GetAll().ToList(); // Bu satırı ekleyin ve değeri kontrol edin
+                confirmationFormVM.Cities = cityList;
+                return confirmationFormVM;
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda loglama veya hata mesajını gösterme
+                Console.WriteLine($"Error in GetCitiesForConfirmationFormAsync: {ex.Message}");
+                return confirmationFormVM;
+            }
         }
+
+
+        public async Task<PaginateVM<Company>> GetAllAsync(int page = 1, int take = 10)
+        {
+            ICollection<Company> companies = await _repository.GetPagination(skip: (page - 1) * take, take: take).ToListAsync();
+            int count = await _repository.GetAll().CountAsync();
+            double totalpage = Math.Ceiling((double)count / take);
+            PaginateVM<Company> vm = new PaginateVM<Company>
+            {
+                Items = companies,
+                CurrentPage = page,
+                TotalPage = totalpage
+            };
+            return vm;
+        }
+
+
+        //public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM)
+        //{
+        //    confirmationFormVM.Cities=await _cityRepository.GetAll().ToListAsync();
+        //    return confirmationFormVM;
+        //}
 
 
 

@@ -92,10 +92,11 @@
             <div class="formbold-input-flex">
                 <div class="form-group">
                     <label asp-for="CityIds">City</label>
-                
-                        <select asp-for="CityIds" asp-items="new SelectList(Model.Cities, nameof(City.Id), nameof(City.Name))">
-                            <option selected disabled>Select one</option>
-                        </select>               
+
+                    <select asp-for="CityIds" asp-items="new SelectList(Model.Cities, nameof(City.Id), nameof(City.Name))">
+                        <option selected disabled>Select one</option>
+                    </select>
+
                     <span asp-validation-for="CityIds" class="text-danger"> </span>
                 </div>
 
