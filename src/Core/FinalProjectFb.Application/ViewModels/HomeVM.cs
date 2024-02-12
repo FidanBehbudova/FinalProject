@@ -11,7 +11,7 @@ namespace FinalProjectFb.Application.ViewModels
     {
         public ICollection<Category> Categories { get; set; }
         public ICollection<Job> Jobs { get; set; }
-        public ICollection<News> Newss { get; set; }
+       
         public ICollection<Company> Companies { get; set; }
 
     }

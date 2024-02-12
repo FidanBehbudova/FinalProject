@@ -3,6 +3,7 @@ using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,10 +17,14 @@ namespace FinalProjectFb.Persistence.Implementations.Services
     internal class CityService : ICityService
     {
         private readonly ICityRepository _repository;
+        private readonly IUserService _user;
+        private readonly IHttpContextAccessor _accessor;
 
-        public CityService(ICityRepository repository)
+        public CityService(ICityRepository repository,IUserService user,IHttpContextAccessor accessor)
         {
             _repository = repository;
+            _user = user;
+            _accessor = accessor;
         }
         public async Task<bool> CreateAsync(CreateCityVM vm, ModelStateDictionary modelstate)
         {
@@ -30,9 +35,11 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 modelstate.AddModelError("Name", "This City is already exist");
                 return false;
             }
-
+            AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
             await _repository.AddAsync(new City
             {
+                
+                CreatedBy = User.UserName,
                 Name = vm.Name,
               
 

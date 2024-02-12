@@ -10,7 +10,7 @@ namespace FinalProjectFb.Application.ViewModels
     public class JobItemVM
     {
         public List<Image>? Images { get; set; }
-
+        public int JobId { get; set; }
         public int? CompanyId { get; set; }
         public Company Company { get; set; }
         public string Name { get; set; }

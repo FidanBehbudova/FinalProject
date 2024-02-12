@@ -3,6 +3,7 @@ using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,10 +18,14 @@ namespace FinalProjectFb.Persistence.Implementations.Services
     internal class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _repository;
+        private readonly IHttpContextAccessor _accessor;
+        private readonly IUserService _user;
 
-        public CategoryService(ICategoryRepository repository)
+        public CategoryService(ICategoryRepository repository, IHttpContextAccessor accessor,IUserService user)
         {
             _repository = repository;
+            _accessor = accessor;
+            _user = user;
         }
         public async  Task<bool> CreateAsync(CreateCategoryVM vm, ModelStateDictionary modelstate)
         {
@@ -31,9 +36,10 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 modelstate.AddModelError("Name", "This Category is already exist");
                 return false;
             }
-                      
+            AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
             await _repository.AddAsync(new Category
             {
+                CreatedBy = User.UserName,
                 Name = vm.Name,
                 Icon= vm.Icon,
 

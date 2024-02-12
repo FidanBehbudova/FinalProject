@@ -20,7 +20,7 @@ namespace FinalProjectFb.Persistence.DAL
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Job> Jobs { get; set; }
-        public DbSet<News> News { get; set; }
+        
         public DbSet<BasicFunctionsİnfo> BasicFunctionsİnfos { get; set; }
         public DbSet<Requirementsİnfo> Requirementsİnfos { get; set; }
         public DbSet<Company> Companies { get; set; }

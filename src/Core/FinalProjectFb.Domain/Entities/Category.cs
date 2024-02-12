@@ -12,6 +12,7 @@ namespace FinalProjectFb.Domain.Entities
         public string Icon { get; set; }        
         public List<Job> Jobs { get; set; }
 
-
+        public string? AppUserId { get; set; }
+        public AppUser? AppUser { get; set; }
     }
 }

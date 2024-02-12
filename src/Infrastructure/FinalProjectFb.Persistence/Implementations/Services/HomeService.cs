@@ -15,14 +15,14 @@ namespace FinalProjectFb.Persistence.Implementations.Services
     {
         private readonly ICategoryRepository _category;
         private readonly IJobRepository _job;
-        private readonly INewsRepository _news;
+        
         private readonly ICompanyRepository _company;
 
-        public HomeService(ICategoryRepository category,IJobRepository job,INewsRepository news,ICompanyRepository company)
+        public HomeService(ICategoryRepository category,IJobRepository job,ICompanyRepository company)
         {
             _category = category;
             _job = job;
-            _news = news;
+        
             _company = company;
         }
         public async Task<HomeVM> GetAllAsync()
@@ -34,7 +34,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 
                 .Include(j => j.Company).ThenInclude(c=>c.CompanyCities).ThenInclude(c=>c.City)
                 .ToListAsync();
-            List<News> news = await _news.GetAll().ToListAsync();
+           
             List<Company> companies = await _company.GetAll().Include(j => j.Images).ToListAsync();
 
 
@@ -42,7 +42,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             {
                 Jobs = jobs,
                 Categories = categories,
-                Newss = news,
+               
                 Companies = companies
 
             };

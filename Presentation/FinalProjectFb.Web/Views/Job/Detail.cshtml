@@ -155,20 +155,43 @@
                         <div class="small-section-tittle">
                             <h4>Company Information</h4>
                         </div>
-                        <span>@Model.Job.Company.Name</span>
+
+                        <a style="color:black;font-size:25px" asp-action="detail" asp-controller="company" asp-route-id="@Model.Job.Company.Id">@Model.Job.Company.Name</a>
+                      @*   <a asp-action="detail" asp-controller="company" asp-route-id="@Model.Job.Company.Id" target="_blank">
+                            <span>@Model.Job.Company.Name</span>
+                        </a> *@
+                    @*     <span>@Model.Job.Company.Name</span> *@
+
                         <p>@Model.Job.Company.Description</p>
                         <ul>
-                            <li>Name: <span>@Model.Job.Company.Name </span></li>
-                            <li>Web : <span>@Model.Job.Company.WebsiteLink</span></li>
-                            <li>Email: <span>@Model.Job.Company.InstagramLink</span></li>
+
+
+                            <div class="d-flex flex-row align-items-center">
+                                <a href="@Model.Job.Company.InstagramLink" class="mr-3">
+                                    <i class="fab fa-instagram fa-2x" style="color:#fb246a;"></i>
+                                </a>
+                                <a href="@Model.Job.Company.FacebookLink" target="_blank" class="mr-3">
+                                    <i class="fab fa-facebook fa-2x" style="color: #fb246a;"></i>
+                                </a>
+                                <a href="@Model.Job.Company.TwitterLink" target="_blank" class="mr-3">
+                                    <i class="fab fa-twitter fa-2x" style="color: #fb246a;"></i>
+                                </a>
+                                <a href="@Model.Job.Company.WebsiteLink" target="_blank">
+                                    <i class="fas fa-globe fa-2x" style="color: #fb246a;"></i>
+                                </a>
+                            </div>
+
+                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="our-services section-pad-t30">
+    <!-- Related Jobs Section -->
+    <div class="our-services section-pad-t25">
         <div class="container">
+            <h2 class="text-center mb-4">Job postings in the same category</h2> <!-- Başlık ve altındaki mb-4 sınıfı eklendi -->
 
             <div class="row d-flex justify-contnet-center">
                 @foreach (var item in Model.RelatedJobs)
@@ -178,6 +201,7 @@
                             <div class="company-img">
                                 <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
                             </div>
+                            <br />
                             <div class="services-cap">
                                 <h5><a href="job_listing.html">@item.Name</a></h5>
                                 <span>@(item?.Company?.Name)</span>
@@ -185,13 +209,14 @@
                         </div>
                     </div>
                 }
-
             </div>
         </div>
     </div>
-    <!-- job post company End -->
-    <div class="our-services section-pad-t30">
+
+    <!-- Company Jobs Section -->
+    <div class="our-services section-pad-t25">
         <div class="container">
+            <h2 class="text-center mb-4">Other job postings of the company</h2> <!-- Başlık ve altındaki mb-4 sınıfı eklendi -->
 
             <div class="row d-flex justify-contnet-center">
                 @foreach (var item in Model.CompanyJobs)
@@ -201,6 +226,7 @@
                             <div class="company-img">
                                 <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
                             </div>
+                            <br />
                             <div class="services-cap">
                                 <h5><a href="job_listing.html">@item.Name</a></h5>
                                 <span>@item?.Company?.Name</span>
@@ -208,9 +234,12 @@
                         </div>
                     </div>
                 }
-
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
 </main>
 

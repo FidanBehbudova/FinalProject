@@ -12,9 +12,7 @@ namespace FinalProjectFb.Application.ViewModels
     public class ConfirmationFormVM
     {
        
-        //public List<Image>? Images { get; set; }
-        //[Required]
-        //public List<CompanyCity>? CompanyCities { get; set; }
+      
         [Required]
 
         public IFormFile Photo { get; set; }

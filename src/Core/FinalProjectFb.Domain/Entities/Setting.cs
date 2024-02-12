@@ -9,6 +9,8 @@ namespace FinalProjectFb.Domain.Entities
 {
     public class Setting:BaseEntity
     {
+        public string? AppUserId { get; set; }
+        public AppUser? AppUser { get; set; }
         public string Key { get; set; }    
         public string Value { get; set; }
     }

@@ -137,6 +137,29 @@
                             </div>
                         </div>
                     }
+
+                    @if (User.IsInRole("Creater"))
+                    {
+                        <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="job_details.html">
+                                        <img style="height:80px;width:80px; margin-bottom: 10px;" src="assets/img/icon/add.png" alt="Create Job">
+                                    </a>
+                                </div>
+                                <div class="job-tittle">
+           
+                                     <a href="job_details.html">
+                                         <h4>Create Job</h4>
+                                     </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    }
                 </div>
             </div>
         </div>
@@ -148,8 +171,7 @@
             <!-- Section Tittle -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-tittle white-text text-center">
-                        
+                    <div class="section-tittle white-text text-center">                       
                         <h2> Companies</h2>
                     </div>
                 </div>
@@ -163,7 +185,7 @@
                             <div class="company-img" style="border-radius: 50%; overflow: hidden; height: 150px; width: 150px; margin: auto;">
                                 @if (item != null && item.Images != null && item.Images.Any())
                                 {
-                                    <a href="job_details.html"><img style="width: 100%; height: 100%; object-fit: cover;" src="~/assets/img/icon/@item.Images.FirstOrDefault()?.Url" alt=""></a>
+                                    <a asp-action="detail" asp-controller="company" asp-route-id="@item.Id"><img style="width: 100%; height: 100%; object-fit: cover;" src="~/assets/img/icon/@item.Images.FirstOrDefault()?.Url" alt=""></a>
                                 }
                                 else
                                 {
@@ -292,31 +314,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach (var item in Model.Newss)
-                {
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="home-blog-single mb-30">
-                            <div class="blog-img-cap">
-                                <div class="blog-img">
-                                    <img src="~/assets/img/blog/home-blog1.jpg" alt="">
-                                    <!-- Blog date -->
-                                    <div class="blog-date text-center">
-                                        <span>24</span>
-                                        <p>Now</p>
-                                    </div>
-                                </div>
-                                <div class="blog-cap">
-                                    <p>|   Properties</p>
-                                    <h3><a href="single-blog.html">Footprints in Time is perfect House in Kurashiki</a></h3>
-                                    <a href="#" class="more-btn">Read more »</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                }
-            </div>
+           
         </div>
     </div>
     <!-- Blog Area End -->

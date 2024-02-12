@@ -17,7 +17,6 @@ namespace FinalProjectFb.Domain.Entities
         public bool? IsPrimary { get; set; }
         public int? JobId { get; set; }
         public Job Job { get; set; }
-        public int? NewsId { get; set; }
-        public News News { get; set; }
+        
     }
 }

@@ -60,7 +60,7 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IJobRepository, JobRepository>();
-			services.AddScoped<INewsRepository, NewsRepository>();
+		
 			services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 			return services;

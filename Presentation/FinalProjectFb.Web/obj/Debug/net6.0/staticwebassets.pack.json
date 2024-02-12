@@ -417,6 +417,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\icon\\6284cfba-9c8a-434e-b2fe-468c0bcb512beconomist.png"
     },
     {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\add.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\add.png"
+    },
+    {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\icon\\economist.png",
       "PackagePath": "staticwebassets\\assets\\img\\icon\\economist.png"
     },
@@ -667,6 +671,438 @@
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\img\\testmonial\\testimonial-founder.png",
       "PackagePath": "staticwebassets\\assets\\img\\testmonial\\testimonial-founder.png"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\_media.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\_media.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\mixins\\_alert.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\mixins\\_alert.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\mixins\\_border-radius.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\mixins\\_border-radius.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\mixins\\_box-shadow.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\mixins\\_box-shadow.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\mixins\\_screen-reader.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\mixins\\_screen-reader.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\mixins\\_visibility.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\mixins\\_visibility.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\utilities\\_stretched-link.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\utilities\\_stretched-link.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\bootstrap\\utilities\\_visibility.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\bootstrap\\utilities\\_visibility.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\job\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\images\\img.jpg",
+      "PackagePath": "staticwebassets\\assets\\job\\images\\img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\job\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\job\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\assets\\job\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\job\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\js\\popper.js",
+      "PackagePath": "staticwebassets\\assets\\job\\js\\popper.js"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\php\\sendEmail.php",
+      "PackagePath": "staticwebassets\\assets\\job\\php\\sendEmail.php"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\job\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\job\\scss\\style.scss"
     },
     {
       "Id": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\Presentation\\FinalProjectFb.Web\\wwwroot\\assets\\js\\animated.headline.js",

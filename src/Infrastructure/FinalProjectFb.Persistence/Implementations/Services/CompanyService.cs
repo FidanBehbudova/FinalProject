@@ -107,33 +107,6 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
-        //public async void ReverseDeleteCompany(int companyId)
-        //{
-        //    // İlgili şirketi al
-        //    Company company = await _repository.GetByIdAsync(companyId);
-
-        //    if (company != null)
-        //    {
-        //        // Şirketin silinmiş bayrağını geri çevir
-        //        company.IsDeleted = false;
-
-        //        // Depoya güncelleme yap
-        //        _repository.Update(company);
-        //    }
-        //    else
-        //    {
-        //        // Şirket bulunamadı, gerekirse bir hata işle
-        //       throw new Exception("Şirket bulunamadı");
-        //    }
-        //}
-        //public async Task<bool> DeletedFormStatus(int id)
-        //{
-        //    if (id < 1) throw new ArgumentOutOfRangeException("id");
-        //    Company company = await _repository.GetByIdAsync(id);
-        //    if (company == null) throw new Exception("Not found");
-        //    _repository.SoftDelete(company);
-        //    return true;
-        //}
         public async Task<ConfirmationFormVM> GetCitiesForConfirmationFormAsync(ConfirmationFormVM confirmationFormVM)
         {
             try

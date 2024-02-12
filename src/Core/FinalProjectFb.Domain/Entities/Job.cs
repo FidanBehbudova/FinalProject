@@ -19,9 +19,10 @@ namespace FinalProjectFb.Domain.Entities
 
        
         public DateTime Deadline { get; set; }
-        
 
 
+        public string? AppUserId { get; set; }
+        public AppUser? AppUser { get; set; }
         public List<Requirementsİnfo> Requirementsİnfos { get; set; }
 
         public List<BasicFunctionsİnfo> BasicFunctionsİnfos { get; set; }

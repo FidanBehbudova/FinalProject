@@ -146,6 +146,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -171,6 +174,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AppUserId");
+
                     b.HasIndex("Icon")
                         .IsUnique();
 
@@ -187,6 +192,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -207,6 +215,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -348,9 +358,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("NewsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -363,8 +370,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.HasIndex("CompanyId");
 
                     b.HasIndex("JobId");
-
-                    b.HasIndex("NewsId");
 
                     b.HasIndex("Url")
                         .IsUnique();
@@ -379,6 +384,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
@@ -429,48 +437,13 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AppUserId");
+
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CompanyId");
 
                     b.ToTable("Jobs");
-                });
-
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.News", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateOfNews")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Requirementsİnfo", b =>
@@ -516,6 +489,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -540,6 +516,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("Key")
                         .IsUnique();
@@ -692,6 +670,24 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Job");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Category", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.City", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Company", b =>
                 {
                     b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
@@ -734,21 +730,19 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .WithMany("Images")
                         .HasForeignKey("JobId");
 
-                    b.HasOne("FinalProjectFb.Domain.Entities.News", "News")
-                        .WithMany("Images")
-                        .HasForeignKey("NewsId");
-
                     b.Navigation("Category");
 
                     b.Navigation("Company");
 
                     b.Navigation("Job");
-
-                    b.Navigation("News");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>
                 {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("FinalProjectFb.Domain.Entities.Category", "Category")
                         .WithMany("Jobs")
                         .HasForeignKey("CategoryId");
@@ -756,6 +750,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
                         .WithMany()
                         .HasForeignKey("CompanyId");
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Category");
 
@@ -769,6 +765,15 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasForeignKey("JobId");
 
                     b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Setting", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -846,11 +851,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Images");
 
                     b.Navigation("Requirementsİnfos");
-                });
-
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.News", b =>
-                {
-                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }

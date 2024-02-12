@@ -1,10 +1,17 @@
 ﻿using FinalProjectFb.Application.Abstractions.Repositories;
 using FinalProjectFb.Application.Abstractions.Repositories.Generic;
 using FinalProjectFb.Application.Abstractions.Services;
+using FinalProjectFb.Application.Utilities;
+using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using FinalProjectFb.Persistence.DAL;
+using FinalProjectFb.Persistence.Implementations.Repositories;
 using FinalProjectFb.Persistence.Implementations.Repositories.Generic;
+using FinalProjectFb.ViewModels;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -13,21 +20,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace FinalProjectFb.Persistence.Implementations.Services
 {
     internal class JobService : IJobService
     {
         private readonly IJobRepository _repository;
-      
+        private readonly IHttpContextAccessor _accessor;
+        private readonly IUserService _user;
+        private readonly IWebHostEnvironment _env;
+        private readonly ICompanyRepository _company;
 
-        public JobService(IJobRepository repository)
+        public JobService(IJobRepository repository,IHttpContextAccessor accessor,IUserService user,IWebHostEnvironment env,ICompanyRepository company)
         {
             _repository = repository;
-           
+            _accessor = accessor;
+            _user = user;
+            _env = env;
+            _company = company;
         }
+        //public async Task<bool> Create(CreateJobVM vm, ModelStateDictionary modelstate)
+        //{
+        //    if (!modelstate.IsValid) return false;
+        //    Company company = _company.GetByIdAsync(vm.CompanyId);
 
-      
+        //    if (await _repository.IsExistAsync(c => c.Name == vm.Name))
+        //    {
+        //        modelstate.AddModelError("Name", "This Job already exists");
+        //        return false;
+        //    }
+
+        //    AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
+
+        //    Image photo = new Image
+        //    {
+        //        IsPrimary = true,
+        //        Url = await vm.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "icon")
+        //    };
+
+        //    Job job = new Job
+        //    {
+        //        AppUserId = User.Id,
+        //        CreatedBy = User.UserName,
+        //        CreatedAt = DateTime.UtcNow,
+        //        Name = vm.Name,
+        //        Requirement = vm.Requirement,
+        //        // Diğer özellikleri de buraya ekleyin
+        //        CreatedByCompanyId = vm.CreatedByCompanyId,
+        //        // Eğer company bilgisine ulaşmak istiyorsanız:
+        //        Company = company,
+        //        // Eğer Category bilgisine ulaşmak istiyorsanız:
+        //        CategoryId = vm.CategoryId,
+        //        Images = new List<Image> { photo },
+        //    };
+
+            
+
+        //    await _repository.AddAsync(job);
+        //    await _repository.SaveChangesAsync();
+        //    return true;
+        //}
+
+
         public async Task<JobDetailVM> DetailAsync(int id)
         {
             if (id < 1) throw new ArgumentOutOfRangeException("id");
