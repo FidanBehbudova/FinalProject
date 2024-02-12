@@ -28,11 +28,19 @@ namespace FinalProjectFb.Web.Areas.Manage.Controllers
             return View(await _service.DetailAsync(id));
         }
 
-        //[HttpPost]
-        //public IActionResult UpdateIsDeleted(int id)
-        //{
-           
-        //}
+     
+
+        public async Task<IActionResult> Deleted(int id)
+        {
+            await _service.SoftDeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Confirmed(int id)
+        {
+            await _service.ReverseDeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }

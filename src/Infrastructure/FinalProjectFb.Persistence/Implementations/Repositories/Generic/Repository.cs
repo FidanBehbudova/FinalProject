@@ -77,7 +77,7 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             return query;
         }
 
-        public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes)
+        public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null, bool ignoreQuery = false, params string[] includes)
         {
             IQueryable<T> query = _dbSet.Where(x => x.Id == id);
             if (ignoreQuery) query = query.IgnoreQueryFilters();
@@ -116,10 +116,12 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
         public void SoftDelete(T entity)
         {
             entity.IsDeleted = true;
+            _dbSet.Update(entity);
         }
         public void ReverseDelete(T entity)
         {
             entity.IsDeleted = false;
+            _dbSet.Update(entity);
         }
         public async Task SaveChangesAsync()
         {

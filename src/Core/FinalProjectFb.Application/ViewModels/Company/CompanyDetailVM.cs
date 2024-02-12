@@ -9,5 +9,7 @@ namespace FinalProjectFb.Application.ViewModels
     public class CompanyDetailVM
     {
         public CompanyItemVM Company { get; set; }
+
+    
     }
 }

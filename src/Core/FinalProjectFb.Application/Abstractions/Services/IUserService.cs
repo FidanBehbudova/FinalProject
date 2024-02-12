@@ -17,5 +17,6 @@ namespace FinalProjectFb.Application.Abstractions.Services
         Task CreateRoleAsync();
         Task CreateAdminRoleAsync();
         Task AssignRoleToUser(AppUser user, string roleName);
+        Task<AppUser> GetUser(string username);
     }
 }

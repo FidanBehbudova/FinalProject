@@ -16,6 +16,8 @@ namespace FinalProjectFb.Domain.Entities
             IsDeleted = null;
             
         }
+        public string? AppUserId { get; set; }
+        public AppUser? AppUser { get; set; }
         public List<Image>? Images { get; set; }
 
         public string Description { get; set; }

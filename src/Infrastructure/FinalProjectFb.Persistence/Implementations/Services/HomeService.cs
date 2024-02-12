@@ -35,7 +35,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 .Include(j => j.Company).ThenInclude(c=>c.CompanyCities).ThenInclude(c=>c.City)
                 .ToListAsync();
             List<News> news = await _news.GetAll().ToListAsync();
-            List<Company> companies = await _company.GetAll().ToListAsync();
+            List<Company> companies = await _company.GetAll().Include(j => j.Images).ToListAsync();
 
 
             HomeVM homeVM = new HomeVM

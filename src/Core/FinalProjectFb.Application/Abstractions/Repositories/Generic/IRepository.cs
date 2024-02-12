@@ -1,4 +1,5 @@
-﻿using FinalProjectFb.Domain.Entities.Common;
+﻿using FinalProjectFb.Domain.Entities;
+using FinalProjectFb.Domain.Entities.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,14 @@ namespace FinalProjectFb.Application.Abstractions.Repositories.Generic
         IQueryable<T> GetAllWhere(Expression<Func<T, bool>>? expression = null, bool isTracking = false, params string[] includes);
         IQueryable<T> GetOrder(Expression<Func<T, object>>? orderExpression = null, bool isDescending = false);
         IQueryable<T> GetPagination(int skip = 0, int take = 0, bool ignoreQuery = false, params string[] includes);
-        Task<T> GetByIdAsync(int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes);
+        Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null , bool ignoreQuery = false, params string[] includes);
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes);
         Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task<bool> IsExist(Expression<Func<T, bool>> expression);
      
         Task AddAsync(T entity);
         void Update(T entity);
+        
         void Delete(T entity);
         void SoftDelete(T entity);
         void ReverseDelete(T entity);

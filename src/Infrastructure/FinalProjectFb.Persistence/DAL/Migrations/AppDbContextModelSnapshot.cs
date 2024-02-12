@@ -222,6 +222,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -265,6 +268,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -685,6 +690,15 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasForeignKey("JobId");
 
                     b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Company", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.CompanyCity", b =>

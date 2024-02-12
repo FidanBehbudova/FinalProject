@@ -15,7 +15,7 @@ namespace FinalProjectFb.Web.Controllers
         public async Task<IActionResult> ConfirmationForm()
         {
             ConfirmationFormVM confirmationFormVM = new ConfirmationFormVM();
-            confirmationFormVM.CityIds = new List<int>(); // Burada CityIds'i başlatın
+            confirmationFormVM.CityIds = new List<int>(); 
             confirmationFormVM = await _service.GetCitiesForConfirmationFormAsync(confirmationFormVM);
             return View(confirmationFormVM);
         }

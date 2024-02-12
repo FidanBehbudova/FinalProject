@@ -149,7 +149,12 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 });
             }
         }
+        public async Task<AppUser> GetUser(string username)
+        {
+            return await _userManager.Users
+                
+                .FirstOrDefaultAsync(u => u.UserName == username);
+        }
 
-       
     }
 }
