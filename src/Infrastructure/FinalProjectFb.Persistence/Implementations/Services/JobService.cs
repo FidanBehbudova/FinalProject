@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace FinalProjectFb.Persistence.Implementations.Services
@@ -31,71 +32,93 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         private readonly IUserService _user;
         private readonly IWebHostEnvironment _env;
         private readonly ICompanyRepository _company;
+        private readonly ICategoryRepository _category;
 
-        public JobService(IJobRepository repository,IHttpContextAccessor accessor,IUserService user,IWebHostEnvironment env,ICompanyRepository company)
+        public JobService(IJobRepository repository,IHttpContextAccessor accessor,IUserService user,IWebHostEnvironment env,ICompanyRepository company,ICategoryRepository category)
         {
             _repository = repository;
             _accessor = accessor;
             _user = user;
             _env = env;
             _company = company;
+            _category = category;
         }
-        //public async Task<bool> Create(CreateJobVM vm, ModelStateDictionary modelstate)
-        //{
-        //    if (!modelstate.IsValid) return false;
-        //    Company company = _company.GetByIdAsync(vm.CompanyId);
+      
+        public async Task<bool> Create(CreateJobVM createJobVM, ModelStateDictionary modelstate)
+        {
+            if (!modelstate.IsValid) return false;
 
-        //    if (await _repository.IsExistAsync(c => c.Name == vm.Name))
-        //    {
-        //        modelstate.AddModelError("Name", "This Job already exists");
-        //        return false;
-        //    }
+          
+            AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
 
-        //    AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
 
-        //    Image photo = new Image
-        //    {
-        //        IsPrimary = true,
-        //        Url = await vm.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "icon")
-        //    };
+            if (createJobVM.Photo != null)
+            {
+                if (!createJobVM.Photo.ValidateType("image/"))
+                {
+                    modelstate.AddModelError("Photo", "File type does not match. Please upload a valid image.");
+                    return false;
+                }
+                if (!createJobVM.Photo.ValidateSize(600))
+                {
+                    modelstate.AddModelError("Photo", "File size should not be larger than 2MB.");
+                    return false;
+                }
+            }
+           
 
-        //    Job job = new Job
-        //    {
-        //        AppUserId = User.Id,
-        //        CreatedBy = User.UserName,
-        //        CreatedAt = DateTime.UtcNow,
-        //        Name = vm.Name,
-        //        Requirement = vm.Requirement,
-        //        // Diğer özellikleri de buraya ekleyin
-        //        CreatedByCompanyId = vm.CreatedByCompanyId,
-        //        // Eğer company bilgisine ulaşmak istiyorsanız:
-        //        Company = company,
-        //        // Eğer Category bilgisine ulaşmak istiyorsanız:
-        //        CategoryId = vm.CategoryId,
-        //        Images = new List<Image> { photo },
-        //    };
+            Image photo = new Image()
+            {
+                IsPrimary = true,
+                Url = await createJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),              
 
-            
+            };
+           
 
-        //    await _repository.AddAsync(job);
-        //    await _repository.SaveChangesAsync();
-        //    return true;
-        //}
+            Job job = new Job
+            {
+                Name = createJobVM.Name,
+                JobNature = createJobVM.JobNature,
+                Experience = createJobVM.Experience,
+                Deadline = createJobVM.Deadline,
+                Salary = createJobVM.Salary,
+                Vacancy = createJobVM.Vacancy,
+                AppUserId = User.Id,
+                CreatedBy = User.UserName,
+                CategoryId = (int)createJobVM.CategoryId,              
+                CreatedAt = DateTime.UtcNow,
+                CompanyId = createJobVM.CompanyId,
+                Images = new List<Image> { photo }
 
+            };
+
+            await _repository.AddAsync(job);
+            await _repository.SaveChangesAsync();
+            return true;
+
+        }
+
+        public async Task<CreateJobVM> CreatedAsync(CreateJobVM vm)
+        {
+
+            vm.Categories = await _category.GetAll().ToListAsync();
+           
+            return vm;
+        }
 
         public async Task<JobDetailVM> DetailAsync(int id)
         {
             if (id < 1) throw new ArgumentOutOfRangeException("id");
 
-            Job job = await _repository.GetByIdAsync(id, includes: new string[] {"Company", "Company.CompanyCities", "Company.CompanyCities.City", "Category","Images", "BasicFunctionsİnfos" , "Requirementsİnfos" });
+            Job job = await _repository.GetByIdAsync(id, includes: new string[] {"Company", "Company.CompanyCities", "Company.CompanyCities.City", "Category","Images" });
 
            
             JobItemVM jobItemVM = new JobItemVM
             {
                 Vacancy = job.Vacancy,
                 JobNature = job.JobNature,
-                BasicFunctionsİnfos = job.BasicFunctionsİnfos,
-                Requirementsİnfos = job.Requirementsİnfos,
+                Requirement = job.Requirement,
+                Function = job.Function,
                 Name = job.Name, 
                 CreatedAt = job.CreatedAt,
                 Category = job.Category,

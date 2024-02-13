@@ -103,41 +103,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.BasicFunctionsİnfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Function")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("JobId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("JobId");
-
-                    b.ToTable("BasicFunctionsİnfos");
-                });
-
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -412,6 +377,10 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<string>("Function")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -424,6 +393,10 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Requirement")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -444,41 +417,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.HasIndex("CompanyId");
 
                     b.ToTable("Jobs");
-                });
-
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Requirementsİnfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("JobId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Requirement")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("JobId");
-
-                    b.ToTable("Requirementsİnfos");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Setting", b =>
@@ -661,15 +599,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.BasicFunctionsİnfo", b =>
-                {
-                    b.HasOne("FinalProjectFb.Domain.Entities.Job", "Job")
-                        .WithMany("BasicFunctionsİnfos")
-                        .HasForeignKey("JobId");
-
-                    b.Navigation("Job");
-                });
-
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Category", b =>
                 {
                     b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
@@ -758,15 +687,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Requirementsİnfo", b =>
-                {
-                    b.HasOne("FinalProjectFb.Domain.Entities.Job", "Job")
-                        .WithMany("Requirementsİnfos")
-                        .HasForeignKey("JobId");
-
-                    b.Navigation("Job");
-                });
-
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Setting", b =>
                 {
                     b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
@@ -846,11 +766,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>
                 {
-                    b.Navigation("BasicFunctionsİnfos");
-
                     b.Navigation("Images");
-
-                    b.Navigation("Requirementsİnfos");
                 });
 #pragma warning restore 612, 618
         }

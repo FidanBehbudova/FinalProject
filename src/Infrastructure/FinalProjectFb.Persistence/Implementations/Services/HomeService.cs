@@ -21,8 +21,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         public HomeService(ICategoryRepository category,IJobRepository job,ICompanyRepository company)
         {
             _category = category;
-            _job = job;
-        
+            _job = job;        
             _company = company;
         }
         public async Task<HomeVM> GetAllAsync()
@@ -41,8 +40,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             HomeVM homeVM = new HomeVM
             {
                 Jobs = jobs,
-                Categories = categories,
-               
+                Categories = categories,               
                 Companies = companies
 
             };

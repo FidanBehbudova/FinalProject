@@ -23,12 +23,12 @@ namespace FinalProjectFb.Domain.Entities
 
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
-        public List<Requirementsİnfo> Requirementsİnfos { get; set; }
-
-        public List<BasicFunctionsİnfo> BasicFunctionsİnfos { get; set; }
 
 
-        public decimal Salary { get; set; }
+		public string Function { get; set; }
+		public string Requirement { get; set; }
+
+		public decimal Salary { get; set; }
         public string JobNature { get; set; }
         public string Experience { get; set; }
 

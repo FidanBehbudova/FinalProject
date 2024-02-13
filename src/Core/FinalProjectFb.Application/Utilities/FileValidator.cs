@@ -9,7 +9,7 @@ namespace FinalProjectFb.Application.Utilities
 {
     public static class FileValidator
     {
-        public static bool CheckType(this IFormFile file, string type)
+        public static bool ValidateType(this IFormFile file, string type)
         {
             if (file.ContentType.Contains(type))
             {

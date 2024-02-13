@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FinalProjectFb.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,19 +9,19 @@ namespace FinalProjectFb.ViewModels
     public class CreateJobVM
     {
        
-        public string Requirement { get; set; }
+     
         public IFormFile Photo { get; set; }
-
-        public string Function { get; set; }
         public string Name { get; set; }
+        public string Function { get; set; }
+		public string Requirement { get; set; }
 
-        public int? CompanyId { get; set; }
+		public int? CompanyId { get; set; }
 
   
         public int? CategoryId { get; set; }
+        public List<Category>? Categories { get; set; }
 
-       
-        [DataType(DataType.Date)]
+        
         public DateTime Deadline { get; set; }
 
         
