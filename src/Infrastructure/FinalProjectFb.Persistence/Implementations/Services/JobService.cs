@@ -174,6 +174,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         {
 
             vm.Categories = await _category.GetAll().ToListAsync();
+            vm.Companies=await _company.GetAll().ToListAsync();
            
             return vm;
         }
@@ -225,57 +226,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             return detailVM;
         }
 
-        //public async Task<JobItemVM> SortingAsync(int key = 1, int page = 1, int id = 1)
-        //{
-        //    if (id < 1) throw new ArgumentOutOfRangeException("id");
-
-        //    List<Job> jobs=await _repository.GetAll().Include(j => j.Images)
-        //        .Include(j => j.Category)
-        //        .Include(j => j.Company)
-        //        .Include(j => j.Company).ThenInclude(c => c.CompanyCities).ThenInclude(c => c.City)
-        //        .ToListAsync();
-
-
-        //    int count = await _repository.GetAll().CountAsync();
-
-        //    int itemsPerPage = 3;
-
-
-        //    double totalPages = Math.Ceiling((double)count / itemsPerPage);
-        //    if (page <= 0) throw new ArgumentOutOfRangeException("page");
-
-
-
-        //    jobs = await _repository.GetAll().Skip((page - 1) * 3).Take(3).Include(x => x.Images).ToListAsync();
-
-        //    switch (key)
-        //    {
-        //        case 1:
-        //            jobs = await _repository.GetAll().OrderByDescending(p => p.CategoryId).Take(6).Include(p => p.Images.Where(pi => pi.IsPrimary != null)).ToListAsync();
-        //            break;
-
-        //        case 2:
-        //            jobs = await _repository.GetAll().OrderBy(p => p.Salary).Take(6).Include(p => p.Images.Where(pi => pi.IsPrimary != null)).ToListAsync();
-        //            break;
-
-        //        case 3:
-        //            jobs = await _repository.GetAll().OrderByDescending(p => p.Id).Take(6).Include(p => p.Images.Where(pi => pi.IsPrimary != null)).ToListAsync();
-        //            break;
-        //        default:
-        //            jobs = await _repository.GetAll().Take(6).Include(p => p.Images.Where(pi => pi.IsPrimary != null)).ToListAsync();
-        //            break;
-
-        //    }
-
-        //    PaginateVM<Product> paginateVM = new PaginateVM<Product>
-        //    {
-        //        Items = jobs,
-        //        TotalPage = (int)totalPages,
-        //        CurrentPage = page
-        //    };
-
-        //    return View(paginateVM);
-        //}
+       
     }
 
 

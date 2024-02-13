@@ -20,8 +20,10 @@ namespace FinalProjectFb.ViewModels
   
         public int? CategoryId { get; set; }
         public List<Category>? Categories { get; set; }
+        public List<Company>? Companies { get; set; }
 
-        
+
+
         public DateTime Deadline { get; set; }
 
         

@@ -134,6 +134,14 @@
                                                     <span asp-validation-for="CategoryId" class="text-danger"></span>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <select asp-for="CompanyId" asp-items="new SelectList(Model.Companies, nameof(Company.Id), nameof(Company.Name))">
+                                                        <option disabled selected>Choose Company</option>
+                                                    </select>
+                                                    <span asp-validation-for="CompanyId" class="text-danger"></span>
+                                                </div>
+                                            </div>
                                           
                                             <div class="col-md-12">
                                                 <div class="form-group">

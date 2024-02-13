@@ -33,7 +33,7 @@
                         <div class="job-items">
 
                             <div class="company-img company-img-details">
-                                <a href="#"><img style="height:100px;width:100px" src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault(i=>i.IsPrimary==null).Url" alt=""></a>
+                                <a href="#"><img style="height:100px;width:100px" src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault(i=>i.IsPrimary==null)?.Url" alt=""></a>
                             </div>
 
                             <div class="job-tittle">
@@ -193,7 +193,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="company-img">
-                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
+                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault().Url" alt=""></a>
                             </div>
                             <br />
                             <div class="services-cap">
@@ -218,7 +218,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="company-img">
-                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null).Url" alt=""></a>
+                                <a href="job_details.html"><img style="height:150px;width:150px" src="~/assets/img/icon/@item.Images.FirstOrDefault(c=>c.IsPrimary==null)?.Url" alt=""></a>
                             </div>
                             <br />
                             <div class="services-cap">
