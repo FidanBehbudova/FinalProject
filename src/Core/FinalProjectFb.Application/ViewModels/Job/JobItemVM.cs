@@ -22,7 +22,7 @@ namespace FinalProjectFb.Application.ViewModels
         public DateTime Deadline { get; set; }
         public DateTime CreatedAt { get; set; }
 
-		public string Function { get; set; }
+		
 		public string Requirement { get; set; }
 
 		public decimal Salary { get; set; }

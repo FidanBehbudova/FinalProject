@@ -8162,7 +8162,7 @@ h1, h2, h3, h4, h5,
   background: #46b5d1 !important; }
 
 .ftco-section {
-  padding: 7em 0; }
+  padding: 3em 0; }
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -8265,10 +8265,11 @@ textarea.form-control {
       transition: none; } }
   .btn:hover, .btn:active, .btn:focus {
     outline: none !important; }
-  .btn.btn-primary {
-    background: #46b5d1 !important;
-    border-color: #46b5d1 !important;
-    color: #fff; }
+.btn.btn-primary {
+    background: #fb246a !important;
+    border-color: #fb246a !important;
+    color: #fff;
+}
     .btn.btn-primary:hover, .btn.btn-primary:focus {
       border-color: #2d9bb7 !important;
       background: #2d9bb7 !important; }

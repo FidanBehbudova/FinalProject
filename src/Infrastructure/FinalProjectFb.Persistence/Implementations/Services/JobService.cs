@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -43,15 +44,34 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             _company = company;
             _category = category;
         }
-      
         public async Task<bool> Create(CreateJobVM createJobVM, ModelStateDictionary modelstate)
         {
+
             if (!modelstate.IsValid) return false;
-
           
-            AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
+            if (createJobVM.CategoryId is not null)
+            {
+                if (!await _category.IsExist(x => x.Id == createJobVM.CategoryId))
+                {
+                    modelstate.AddModelError("CategoryId", "You dont have this Category");
+                    return false;
+                }
 
+            }
 
+            string username = "";
+            if (_accessor.HttpContext.User.Identity != null)
+            {
+                username = _accessor.HttpContext.User.Identity.Name;
+            }
+            AppUser User = await _user.GetUser(username);
+
+            Company company = await _company.GetByExpressionAsync(x => x.AppUserId == User.Id, isDeleted: false, includes: new string[] { nameof(Company.Jobs) });
+            if (company.Jobs.Where(x => x.Name == createJobVM.Name && x.CompanyId == company.Id).Count() >= 1)
+            {
+                modelstate.AddModelError("Name", "You have this job in your Jobs");
+                return false;
+            }
             if (createJobVM.Photo != null)
             {
                 if (!createJobVM.Photo.ValidateType("image/"))
@@ -65,19 +85,17 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                     return false;
                 }
             }
-           
 
-            Image photo = new Image()
+            Image photo = new Image
             {
                 IsPrimary = true,
-                Url = await createJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),              
-
+                Url = await createJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "icon")
             };
-           
 
             Job job = new Job
             {
                 Name = createJobVM.Name,
+                Requirement = createJobVM.Requirement,              
                 JobNature = createJobVM.JobNature,
                 Experience = createJobVM.Experience,
                 Deadline = createJobVM.Deadline,
@@ -85,18 +103,72 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 Vacancy = createJobVM.Vacancy,
                 AppUserId = User.Id,
                 CreatedBy = User.UserName,
-                CategoryId = (int)createJobVM.CategoryId,              
+                CategoryId =createJobVM.CategoryId,              
                 CreatedAt = DateTime.UtcNow,
-                CompanyId = createJobVM.CompanyId,
+                //CompanyId = createJobVM.CompanyId,
                 Images = new List<Image> { photo }
-
             };
+            job.CompanyId = company.Id;
 
+            
             await _repository.AddAsync(job);
             await _repository.SaveChangesAsync();
             return true;
-
         }
+
+        //public async Task<bool> Create(CreateJobVM createJobVM, ModelStateDictionary modelstate)
+        //{
+        //    if (!modelstate.IsValid) return false;
+
+
+        //    AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
+
+
+        //    if (createJobVM.Photo != null)
+        //    {
+        //        if (!createJobVM.Photo.ValidateType("image/"))
+        //        {
+        //            modelstate.AddModelError("Photo", "File type does not match. Please upload a valid image.");
+        //            return false;
+        //        }
+        //        if (!createJobVM.Photo.ValidateSize(600))
+        //        {
+        //            modelstate.AddModelError("Photo", "File size should not be larger than 2MB.");
+        //            return false;
+        //        }
+        //    }
+
+
+        //    Image photo = new Image()
+        //    {
+        //        IsPrimary = true,
+        //        Url = await createJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img"),              
+
+        //    };
+
+
+        //    Job job = new Job
+        //    {
+        //        Name = createJobVM.Name,
+        //        JobNature = createJobVM.JobNature,
+        //        Experience = createJobVM.Experience,
+        //        Deadline = createJobVM.Deadline,
+        //        Salary = createJobVM.Salary,
+        //        Vacancy = createJobVM.Vacancy,
+        //        AppUserId = User.Id,
+        //        CreatedBy = User.UserName,
+        //        CategoryId = (int)createJobVM.CategoryId,              
+        //        CreatedAt = DateTime.UtcNow,
+        //        CompanyId = createJobVM.CompanyId,
+        //        Images = new List<Image> { photo }
+
+        //    };
+
+        //    await _repository.AddAsync(job);
+        //    await _repository.SaveChangesAsync();
+        //    return true;
+
+        //}
 
         public async Task<CreateJobVM> CreatedAsync(CreateJobVM vm)
         {
@@ -118,7 +190,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 Vacancy = job.Vacancy,
                 JobNature = job.JobNature,
                 Requirement = job.Requirement,
-                Function = job.Function,
+                
                 Name = job.Name, 
                 CreatedAt = job.CreatedAt,
                 Category = job.Category,

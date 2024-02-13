@@ -16,7 +16,7 @@ namespace FinalProjectFb.Application.Abstractions.Repositories.Generic
         IQueryable<T> GetOrder(Expression<Func<T, object>>? orderExpression = null, bool isDescending = false);
         IQueryable<T> GetPagination(int skip = 0, int take = 0, bool ignoreQuery = false, params string[] includes);
         Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null , bool ignoreQuery = false, params string[] includes);
-        Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes);
+        Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression,  bool? isDeleted = null , bool isTracking = false, bool ignoreQuery = false, params string[] includes);
         Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task<bool> IsExist(Expression<Func<T, bool>> expression);
      

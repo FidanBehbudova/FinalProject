@@ -81,8 +81,7 @@
                                 <span class="text-danger" asp-validation-for="Birthday"></span>
                             </div>
 
-                            <script>
-                                // JavaScript ile yaş kontrolü
+                            <script>                              
                                 var birthdayInput = document.querySelector('input[type="date"]');
 
                                 birthdayInput.addEventListener('change', function () {
@@ -91,9 +90,9 @@
                                     minDate.setFullYear(minDate.getFullYear() - 18);
 
                                     if (selectedDate > minDate) {
-                                        // 18 yaşından büyükse uyarı göster
-                                        alert('18 yaşından küçük kişiler doğum tarihi seçemez.');
-                                        this.value = ''; // Tarihi temizleme
+                                        
+                                        alert('Persons under the age of 18 cannot register.');
+                                        this.value = ''; 
                                     }
                                 });
                             </script>

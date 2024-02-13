@@ -19,7 +19,7 @@ namespace FinalProjectFb.Domain.Entities
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
         public List<Image>? Images { get; set; }
-
+        public List<Job>? Jobs { get; set; }
         public string Description { get; set; }
         public string FacebookLink { get; set; }
         public string InstagramLink { get; set; }

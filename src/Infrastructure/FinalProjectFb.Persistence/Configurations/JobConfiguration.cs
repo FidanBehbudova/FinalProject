@@ -17,7 +17,9 @@ namespace FinalProjectFb.Persistence.Configurations
            
 
             builder.Property(c => c.JobNature).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.Experience).IsRequired().HasMaxLength(25);
+            builder.Property(x => x.Experience).IsRequired().HasColumnType("text");
+            builder.Property(x => x.Requirement).IsRequired().HasColumnType("text");
+
 
 
 

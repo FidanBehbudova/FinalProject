@@ -9,6 +9,8 @@ namespace FinalProjectFb.Domain.Entities
 {
     public class Job:BaseNameableEntity
     {
+        
+
         public List<Image>? Images { get; set; }
 
         public int? CompanyId { get; set; }
@@ -25,7 +27,7 @@ namespace FinalProjectFb.Domain.Entities
         public AppUser? AppUser { get; set; }
 
 
-		public string Function { get; set; }
+		
 		public string Requirement { get; set; }
 
 		public decimal Salary { get; set; }

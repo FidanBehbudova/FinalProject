@@ -374,12 +374,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.Property<string>("Experience")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("Function")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
@@ -398,7 +393,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.Property<string>("Requirement")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal(6,2)");
@@ -677,7 +672,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
-                        .WithMany()
+                        .WithMany("Jobs")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("AppUser");
@@ -762,6 +757,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("CompanyCities");
 
                     b.Navigation("Images");
+
+                    b.Navigation("Jobs");
                 });
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>

@@ -26,14 +26,14 @@ namespace FinalProjectFb.Web.Controllers
             return View(createJobVM);
         }
         [HttpPost]
-        public async Task<IActionResult> ConfirmationForm(CreateJobVM createJobVM)
+        public async Task<IActionResult> Create(CreateJobVM createJobVM)
         {
             //if (await _service.GetConfirmationFormAsync(confirmationFormVM, ModelState))
             //    return RedirectToAction("Index", "Home");
             //return View(await _service.GetCitiesForConfirmationFormAsync(confirmationFormVM));
 
             if (await _service.Create(createJobVM, ModelState))
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             return View(await _service.CreatedAsync(createJobVM));
         }
         //public async Task<IActionResult> Create()

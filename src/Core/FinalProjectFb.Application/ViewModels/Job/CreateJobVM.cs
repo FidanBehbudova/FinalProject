@@ -12,7 +12,7 @@ namespace FinalProjectFb.ViewModels
      
         public IFormFile Photo { get; set; }
         public string Name { get; set; }
-        public string Function { get; set; }
+        
 		public string Requirement { get; set; }
 
 		public int? CompanyId { get; set; }
@@ -38,10 +38,9 @@ namespace FinalProjectFb.ViewModels
         public string Vacancy { get; set; }
 
     
-        [DataType(DataType.Date)]
-        public DateTime DiscontinuationDate { get; set; }
+    
 
        
-        public string CreatedByCompanyId { get; set; }
+        
     }
 }

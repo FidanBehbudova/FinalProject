@@ -76,7 +76,7 @@
                                 <h4>Education + Experience</h4>
                             </div>
                             <ul>
-                                @foreach (var sentence in @Model.Job.Function.Split('.'))
+                                @foreach (var sentence in @Model.Job.Experience.Split('.'))
                                 {
                                     <li>@sentence.Trim()</li>
                                 }
@@ -155,11 +155,7 @@
                         </div>
 
                         <a style="color:black;font-size:25px" asp-action="detail" asp-controller="company" asp-route-id="@Model.Job.Company.Id">@Model.Job.Company.Name</a>
-                      @*   <a asp-action="detail" asp-controller="company" asp-route-id="@Model.Job.Company.Id" target="_blank">
-                            <span>@Model.Job.Company.Name</span>
-                        </a> *@
-                    @*     <span>@Model.Job.Company.Name</span> *@
-
+            
                         <p>@Model.Job.Company.Description</p>
                         <ul>
 
@@ -189,7 +185,7 @@
     <!-- Related Jobs Section -->
     <div class="our-services section-pad-t25">
         <div class="container">
-            <h2 class="text-center mb-4">Job postings in the same category</h2> <!-- Başlık ve altındaki mb-4 sınıfı eklendi -->
+            <h2 class="text-center mb-4">Job postings in the same category</h2> 
 
             <div class="row d-flex justify-contnet-center">
                 @foreach (var item in Model.RelatedJobs)
@@ -214,7 +210,7 @@
     <!-- Company Jobs Section -->
     <div class="our-services section-pad-t25">
         <div class="container">
-            <h2 class="text-center mb-4">Other job postings of the company</h2> <!-- Başlık ve altındaki mb-4 sınıfı eklendi -->
+            <h2 class="text-center mb-4">Other job postings of the company</h2> 
 
             <div class="row d-flex justify-contnet-center">
                 @foreach (var item in Model.CompanyJobs)

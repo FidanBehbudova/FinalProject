@@ -87,7 +87,7 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, int id, bool isTracking = false, bool ignoreQuery = false, params string[] includes)
+        public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression,  bool? isDeleted = null, bool isTracking = false, bool ignoreQuery = false, params string[] includes)
         {
             IQueryable<T> query = _dbSet.Where(expression);
             if (ignoreQuery) query = query.IgnoreQueryFilters();
