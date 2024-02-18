@@ -70,11 +70,11 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 }
                 return str;
             }
-            await _signInManager.SignInAsync(user, isPersistent: false);
             if (user != null)
             {
                 await AssignRoleToUser(user, vm.Role.ToString());
             }
+            await _signInManager.SignInAsync(user, isPersistent: false);
             return str;
 
         }
@@ -149,11 +149,118 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 });
             }
         }
+
+        public async Task<AppUser> GetUserById(string userId)
+        {
+            return await _userManager.Users
+
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+
+        }
         public async Task<AppUser> GetUser(string username)
         {
             return await _userManager.Users
                 
                 .FirstOrDefaultAsync(u => u.UserName == username);
+        }
+
+        public async Task<ICollection<AppUser>> GetAllUsers(string searchTerm)
+        {
+            return await _userManager.Users.Where(x => x.UserName.ToLower().Contains(searchTerm.ToLower()) || x.Name.ToLower().Contains(searchTerm.ToLower()) || x.Surname.ToLower().Contains(searchTerm.ToLower())).ToListAsync();
+        }
+        public async Task UpdateUserRole(string userId, string roleName)
+        {
+            AppUser user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new Exception("User Not found");
+            }
+            IList<string> existingRoles = await _userManager.GetRolesAsync(user);
+            foreach (var role in existingRoles)
+            {
+                await _userManager.RemoveFromRoleAsync(user, role);
+            }
+            await _userManager.AddToRoleAsync(user, roleName);
+            await _userManager.UpdateAsync(user);
+        }
+        
+        public async Task<List<string>> UpdateUser(string userId, UpdateUserVM vm)
+        {
+            List<string> str = new List<string>();
+
+           
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                str.Add("User not found");
+                return str;
+            }
+
+          
+            if (!string.IsNullOrEmpty(vm.Name) && vm.Name.IsLetter())
+            {
+                user.Name = vm.Name.Capitalize();
+            }
+
+            if (!string.IsNullOrEmpty(vm.Email) && vm.Email.CheeckEmail())
+            {
+                user.Email = vm.Email;
+            }
+
+            if (!string.IsNullOrEmpty(vm.Password))
+            {
+                IdentityResult passwordResult = await _userManager.ChangePasswordAsync(user, null, vm.Password);
+
+                if (!passwordResult.Succeeded)
+                {
+                    foreach (var error in passwordResult.Errors)
+                    {
+                        str.Add(error.Description);
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(vm.Username))
+            {
+                user.UserName = vm.Username;
+            }
+
+            if (!string.IsNullOrEmpty(vm.Surname) && vm.Surname.IsLetter())
+            {
+                user.Surname = vm.Surname.Capitalize();
+            }
+
+            if (vm.Gender.HasValue)
+            {
+                user.Gender = vm.Gender.Value;
+            }
+
+            if (vm.Birthday.HasValue)
+            {
+                user.Birthday = vm.Birthday.Value;
+            }
+
+            
+
+            if (vm.Role.HasValue)
+            {
+                await UpdateUserRole(userId, vm.Role.ToString());
+            }
+
+          
+            IdentityResult result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    str.Add(error.Description);
+                }
+            }
+
+            return str;
         }
 
     }

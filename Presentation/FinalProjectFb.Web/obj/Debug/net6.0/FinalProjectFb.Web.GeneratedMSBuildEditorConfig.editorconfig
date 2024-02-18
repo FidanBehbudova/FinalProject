@@ -50,10 +50,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbXBhbnlBZG1pblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Areas/Manage/Views/Company/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbXBhbnlcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,12 +90,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Account/UpdateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGVVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Company/ConfirmationForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxDb25maXJtYXRpb25Gb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Company/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Company/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Company/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Cv/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Cv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Home/Index.cshtml]
@@ -110,8 +134,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Job/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Job/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Job/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9iXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/_ViewImports.cshtml]
@@ -121,7 +157,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Fidan/OneDrive/Desktop/FinalProjectFb/Presentation/FinalProjectFb.Web/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-9fw7ay3s37

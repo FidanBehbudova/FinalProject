@@ -2,6 +2,7 @@
 using FinalProjectFb.Domain.Entities.Common;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace FinalProjectFb.Persistence.DAL
         public DbSet<Image> Images { get; set; }
         public DbSet<CompanyCity> CompanyCities { get; set; }
         public DbSet<City> Cities { get; set; }
+		public DbSet<Cv> Cvs { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

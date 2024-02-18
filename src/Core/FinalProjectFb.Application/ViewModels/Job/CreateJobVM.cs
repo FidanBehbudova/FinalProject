@@ -15,12 +15,12 @@ namespace FinalProjectFb.ViewModels
         
 		public string Requirement { get; set; }
 
-		public int? CompanyId { get; set; }
+		public int CompanyId { get; set; }
 
   
         public int? CategoryId { get; set; }
         public List<Category>? Categories { get; set; }
-        public List<Company>? Companies { get; set; }
+        
 
 
 

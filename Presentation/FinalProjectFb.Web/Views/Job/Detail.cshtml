@@ -33,7 +33,7 @@
                         <div class="job-items">
 
                             <div class="company-img company-img-details">
-                                <a href="#"><img style="height:100px;width:100px" src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault(i=>i.IsPrimary==null)?.Url" alt=""></a>
+                                <a href="#"><img style="height:100px;width:100px" src="~/assets/img/icon/@Model.Job.Images.FirstOrDefault()?.Url" alt=""></a>
                             </div>
 
                             <div class="job-tittle">
@@ -122,7 +122,7 @@
                             <li>
                                 Discontinuation Date : <span>
                                     @{
-                                        TimeSpan differencce = Model.Job.DiscontinuationDate-DateTime.Now ;
+                                        TimeSpan differencce = Model.Job.Deadline-DateTime.Now ;
 
                                         string timedifferencce = "";
                                         if (differencce.TotalDays >= 1)
@@ -145,7 +145,8 @@
 
                         </ul>
                         <div class="apply-btn2">
-                            <a href="#" class="btn">Apply Now</a>
+
+                            <a asp-action="create" asp-controller="cv" asp-route-JobId="@Model.Job.JobId" class="btn">Apply Now</a>
                         </div>
                     </div>
                     <div class="post-details4  mb-50">

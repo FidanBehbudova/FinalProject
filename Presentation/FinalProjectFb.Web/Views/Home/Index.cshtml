@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-9 col-md-10">
                             <div class="hero__caption">
-                                <h1>Find the most exciting startup jobs</h1>
+                                <h1>Maybe your dream job is here</h1>
                             </div>
                         </div>
                     </div>
@@ -43,28 +43,30 @@
             <!-- Section Tittle -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-tittle text-center">
-                       
+                    <div class="section-tittle text-center">                      
                         <h2>Categories </h2>
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-contnet-center">
 
-                @foreach (var item in Model.Categories)
-                {
+                @{
+                    var firstEightCategories = Model.Categories.Take(8);
 
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-services text-center mb-30">
-                            <div class="services-ion">
-                                <span class="@item.Icon"></span>
-                            </div>
-                            <div class="services-cap">
-                                <h5><a href="job_listing.html">@item.Name</a></h5>
-                                <span>@item.Jobs.Count</span>
+                    foreach (var item in firstEightCategories)
+                    {
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-services text-center mb-30">
+                                <div class="services-ion">
+                                    <span class="@item.Icon"></span>
+                                </div>
+                                <div class="services-cap">
+                                    <h5><a href="job_listing.html">@item.Name</a></h5>
+                                    <span>@item.Jobs.Count</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
             <!-- More Btn -->
@@ -87,14 +89,62 @@
                 <div class="col-lg-12">
                     <div class="section-tittle text-center">
                         
-                        <h2>Featured Jobs</h2>
+                        <h2>Latest Added jobs</h2>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-10">
                     <!-- single-job-content -->
-                    @foreach (var item in Model.Jobs)
+                    @{
+                        var latestJobs = Model.Jobs.OrderByDescending(j => j.CreatedAt).Take(5);
+                    }
+
+                    @foreach (var item in latestJobs)
+                    {
+                        <div class="single-job-items mb-30">
+                            <!-- Diğer HTML kodları buraya eklenecek -->
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a asp-action="detail" asp-controller="job" asp-route-id="@item.Id"><img style="height:80px;width:80px" src="~/assets/img/icon/@item.Images.FirstOrDefault()?.Url" alt=""></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a asp-action="detail" asp-controller="job" asp-route-id="@item.Id"><h4>@item.Name</h4></a>
+                                    <ul>
+                                        <li>@item.Category.Name</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>@item.Company.CompanyCities.FirstOrDefault(c => c.City.Id == c.CityId)?.City.Name</li>
+                                        <li>$@item.Salary</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="items-link f-right">
+                                <a asp-action="detail" asp-controller="job" asp-route-id="@item.Id">@item.JobNature</a>
+                                <span>
+                                    @{
+                                        TimeSpan difference = DateTime.Now - item.CreatedAt;
+
+                                        string timedifference = "";
+                                        if (difference.TotalDays >= 1)
+                                        {
+                                            timedifference = $"{(int)difference.TotalDays} days ago";
+                                        }
+                                        else if (difference.TotalHours >= 1)
+                                        {
+                                            timedifference = $"{(int)difference.TotalHours} hours ago";
+                                        }
+                                        else
+                                        {
+                                            timedifference = $"{(int)difference.TotalMinutes} minutes ago";
+                                        }
+                                    }
+
+                                    @timedifference
+                                </span>
+                            </div>
+                        </div>
+                    }
+
+                    @* @foreach (var item in Model.Jobs)
                     {
                         <div class="single-job-items mb-30">
                             <div class="job-items">
@@ -136,30 +186,8 @@
                                 </span>
                             </div>
                         </div>
-                    }
-
-                    @if (User.IsInRole("Creater"))
-                    {
-                        <div class="single-job-items mb-30">
-                            <div class="job-items">
-                                <div class="company-img">
-                                    <a href="job_details.html">
-                                        <img style="height:80px;width:80px; margin-bottom: 10px;" src="assets/img/icon/add.png" alt="Create Job">
-                                    </a>
-                                </div>
-                                <div class="job-tittle">
-           
-                                     <a asp-action="create" asp-controller="job">
-                                         <h4>Create Job</h4>
-                                     </a>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    }
+                    } *@
+                 
                 </div>
             </div>
         </div>

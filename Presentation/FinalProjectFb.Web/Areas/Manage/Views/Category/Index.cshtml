@@ -42,49 +42,24 @@
                         }                                 
                     </tbody>
                 </table>
-                <style>
-                    .pagination .page-link,
-                    .pagination .page-item.active .page-link {
-                        color: white !important;
-                    }
-
-                    .pagination .page-item.active .page-link {
-                        background-color: black !important;
-                        border-color: black !important;
-                    }
-
-                    .pagination .page-item .page-link {
-                        color: black !important; 
-                    }
-
-                    .pagination .page-item.disabled .page-link {
-                        color: #6c757d !important; 
-                    }
-                </style>
-
-                <div class="w-100 d-flex justify-content-center mt-4">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item @(Model.CurrentPage <= 1 ? "disabled" : "")">
-                                <a class="page-link shadow" asp-route-page="@(Model.CurrentPage - 1)" asp-action="index" asp-controller="category" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
+                <div class="pt-5">
+                    <nav aria-label="Page navigation example ">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item @(Model.CurrentPage<=1 ? "disabled" : "active")">
+                                <a class="page-link " asp-route-page="@(Model.CurrentPage-1)" asp-action="index" asp-controller="Category">Previous</a>
                             </li>
                             @for (int i = 0; i < Model.TotalPage; i++)
                             {
-                                <li class="page-item @(Model.CurrentPage - 1 == i ? "btn-success active" : "")">
-                                    <a class="page-link shadow" asp-route-page="@(i + 1)" asp-action="index" asp-controller="category">@((i + 1))</a>
+                                <li class="page-item @(Model.CurrentPage-1==i ? "btn-success active disabled" : "")">
+                                    <a class="page-link" asp-route-page="@(i+1)" asp-action="index" asp-controller="Category">@(i + 1)</a>
                                 </li>
                             }
-                            <li class="page-item @(Model.TotalPage == Model.CurrentPage ? "disabled" : "")">
-                                <a class="page-link shadow" asp-route-page="@(Model.CurrentPage + 1)" asp-action="index" asp-controller="category" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
+                            <li class="page-item @(Model.TotalPage==Model.CurrentPage || Model.CurrentPage==1? "disabled" : "active")">
+                                <a class="page-link " asp-route-page="@(Model.CurrentPage+1)" asp-action="index" asp-controller="Category">Next</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
-
 
             </div>
         </div>

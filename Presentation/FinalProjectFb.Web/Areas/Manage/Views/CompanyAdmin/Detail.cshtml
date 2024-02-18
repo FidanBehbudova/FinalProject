@@ -13,7 +13,7 @@
                         border-width: 5px;
                     }
                 </style>
-                <a asp-action="confirmed" asp-controller="companyadmin" class="btn btn-light btn-rounded btn-fw thick-btn">Confirmed</a>
+                <a asp-action="confirmed" asp-controller="companyadmin" asp-route-id="@Model.Company.CompanyId" class="btn btn-light btn-rounded btn-fw thick-btn">Confirmed</a>
                 <a asp-action="deleted" asp-controller="companyadmin" asp-route-id="@Model.Company.CompanyId" class="btn btn-danger btn-rounded btn-fw thick-btn">Deleted</a>
             </div>
         </div>

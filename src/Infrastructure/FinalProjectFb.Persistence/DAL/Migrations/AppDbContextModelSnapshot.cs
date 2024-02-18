@@ -290,6 +290,94 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.ToTable("CompanyCities");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Cv", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Birthday")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<string>("FinnishCode")
+                        .IsRequired()
+                        .HasMaxLength(7)
+                        .HasColumnType("nvarchar(7)");
+
+                    b.Property<bool?>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("JobId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Address")
+                        .IsUnique();
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("FatherName")
+                        .IsUnique();
+
+                    b.HasIndex("FinnishCode")
+                        .IsUnique();
+
+                    b.HasIndex("JobId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.HasIndex("Surname")
+                        .IsUnique();
+
+                    b.ToTable("Cvs");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Image", b =>
                 {
                     b.Property<int>("Id")
@@ -356,7 +444,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CompanyId")
+                    b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -367,9 +455,6 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Deadline")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DiscontinuationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Experience")
@@ -640,6 +725,21 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("FinalProjectFb.Domain.Entities.Cv", b =>
+                {
+                    b.HasOne("FinalProjectFb.Domain.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("FinalProjectFb.Domain.Entities.Job", "Job")
+                        .WithMany("Cvs")
+                        .HasForeignKey("JobId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Job");
+                });
+
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Image", b =>
                 {
                     b.HasOne("FinalProjectFb.Domain.Entities.Category", "Category")
@@ -673,7 +773,9 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
                         .WithMany("Jobs")
-                        .HasForeignKey("CompanyId");
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AppUser");
 
@@ -763,6 +865,8 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
             modelBuilder.Entity("FinalProjectFb.Domain.Entities.Job", b =>
                 {
+                    b.Navigation("Cvs");
+
                     b.Navigation("Images");
                 });
 #pragma warning restore 612, 618

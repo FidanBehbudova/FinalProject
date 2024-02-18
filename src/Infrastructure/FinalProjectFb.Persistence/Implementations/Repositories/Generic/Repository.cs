@@ -22,16 +22,15 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             _dbSet = context.Set<T>();
         }
 
-        public IQueryable<T> GetAll(bool isTracking = false, bool ignoreQuery = false, params string[] includes)
-        {
-            IQueryable<T> query = _dbSet;
-            if (ignoreQuery) query = query.IgnoreQueryFilters();
-            if (!isTracking) query = query.AsNoTracking();
-            query = _addIncludes(query, includes);
-
-            return query;
-        }
-        public IQueryable<T> GetAllWhere(Expression<Func<T, bool>>? expression = null,
+		public IQueryable<T> GetAll(bool IgnoreQuery = false, bool IsTracking = false, params string[] includes)
+		{
+			IQueryable<T> query = _dbSet;
+			if (IgnoreQuery) query = query.IgnoreQueryFilters();
+			if (!IsTracking) query = query.AsNoTracking();
+			query = _addIncludes(query, includes);
+			return query;
+		}
+		public IQueryable<T> GetAllWhere(Expression<Func<T, bool>>? expression = null,
             bool IsTracking = false,
             params string[] includes)
         {
@@ -68,16 +67,38 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             return query;
         }
 
-        public IQueryable<T> GetPagination(int skip = 0, int take = 0, bool ignoreQuery = false, params string[] includes)
-        {
-            IQueryable<T> query = _context.Set<T>();
-            if (skip != 0) query = query.Skip(skip);
-            if (take != 0) query = query.Take(take);
-            if (ignoreQuery) query = query.IgnoreQueryFilters();
-            return query;
-        }
+		public IQueryable<T> GetPagination(int skip = 0, int take = 0, bool IgnoreQuery = true, Expression<Func<T, object>>? orderExpression = null, bool IsDescending = false, params string[] includes)
+		{
+			IQueryable<T> query = _context.Set<T>();
+			if (skip != 0) query = query.Skip(skip);
+			if (take != 0) query = query.Take(take);
+			if (orderExpression != null)
+			{
+				if (IsDescending)
+				{
+					query = query.OrderByDescending(orderExpression);
+				}
+				else
+				{
+					query = query.OrderBy(orderExpression);
+				}
 
-        public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null, bool ignoreQuery = false, params string[] includes)
+			}
+			query = _addIncludes(query, includes);
+			if (IgnoreQuery)
+			{
+				query = query.IgnoreQueryFilters();
+			}
+			return query;
+		}
+		public IQueryable<T> GetAllnotDeleted(bool isTracking = false, params string[] includes)
+		{
+			IQueryable<T> query = _dbSet;
+			if (!isTracking) query = query.AsNoTracking();
+			if (includes != null) query = _addIncludes(query, includes);
+			return query;
+		}
+		public async Task<T> GetByIdAsync(int id, bool isTracking = false, bool? isDeleted = null, bool ignoreQuery = false, params string[] includes)
         {
             IQueryable<T> query = _dbSet.Where(x => x.Id == id);
             if (ignoreQuery) query = query.IgnoreQueryFilters();
@@ -85,6 +106,29 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             query = _addIncludes(query, includes);
             
             return await query.FirstOrDefaultAsync();
+        }
+        public async Task<T> GetByIdnotDeletedAsync(int id, bool isTracking = false, params string[] includes)
+        {
+            IQueryable<T> query = _dbSet.Where(x => x.Id == id);
+            if (!isTracking) query = query.AsNoTracking();
+            if (includes != null) query = _addIncludes(query, includes);
+            return await query.FirstOrDefaultAsync();
+        }
+        public IQueryable<T> GetPaginationC<T>(Expression<Func<T, bool>> filter = null, int skip = 0, int take = 10) where T : class
+        {
+           
+            IQueryable<T> query = _context.Set<T>();
+
+          
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            // Sayfalama
+            query = query.Skip(skip).Take(take);
+
+            return query;
         }
 
         public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression,  bool? isDeleted = null, bool isTracking = false, bool ignoreQuery = false, params string[] includes)

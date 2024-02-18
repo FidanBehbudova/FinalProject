@@ -43,6 +43,8 @@ namespace FinalProjectFb.Application.Utilities
             }
             return filename;
         }
+
+
         public static void DeleteFile(this string filename, string root, params string[] folders)
         {
             string path = root;
@@ -51,10 +53,13 @@ namespace FinalProjectFb.Application.Utilities
                 path = Path.Combine(path, folders[i]);
             }
             path = Path.Combine(path, filename);
+
             if (File.Exists(path))
             {
                 File.Delete(path);
             }
         }
+
+
     }
 }

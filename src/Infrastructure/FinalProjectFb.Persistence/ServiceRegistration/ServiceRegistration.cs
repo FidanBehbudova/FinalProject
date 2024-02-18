@@ -21,6 +21,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using FinalProjectFb.Application.MappingProfiles;
 using Microsoft.IdentityModel.Tokens;
+using FinalProjectFb.Application.Abstractions.Repositories.Generic;
+using FinalProjectFb.Persistence.Implementations.Repositories.Generic;
 
 namespace FinalProjectFb.Persistence.ServiceRegistration
 {
@@ -50,17 +52,16 @@ namespace FinalProjectFb.Persistence.ServiceRegistration
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<ICompanyService, CompanyService>();
+			services.AddScoped<ICvService, CvService>();
+            services.AddScoped<IEmailService, EmailService>();
 
 
 
-
-
-
-            services.AddScoped<ISettingRepository, SettingRepository>();
+            services.AddScoped<ICvRepository, CvRepository>();
+			services.AddScoped<ISettingRepository, SettingRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IJobRepository, JobRepository>();
-		
+            services.AddScoped<IJobRepository, JobRepository>();		
 			services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 			return services;

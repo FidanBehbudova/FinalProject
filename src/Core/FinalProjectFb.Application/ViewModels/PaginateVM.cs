@@ -11,5 +11,8 @@ namespace FinalProjectFb.Application.ViewModels
         public ICollection<T> Items { get; set; }
         public double TotalPage { get; set; }
         public int CurrentPage { get; set; }
+        public int CompanyId { get; set; }
+        public int JobId { get; set; }
+
     }
 }

@@ -134,9 +134,7 @@ C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\o
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.FinalProjectFb.Web.props
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.FinalProjectFb.Web.props
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\scopedcss\bundle\FinalProjectFb.Web.styles.css
-C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\scopedcss\projectbundle\FinalProjectFb.Web.bundle.scp.css
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\FinalProjectFb.Web.csproj.CopyComplete
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\FinalProjectFb.Web.genruntimeconfig.cache
 C:\Users\Fidan\OneDrive\Desktop\FinalProjectFb\Presentation\FinalProjectFb.Web\obj\Debug\net6.0\ref\FinalProjectFb.Web.dll

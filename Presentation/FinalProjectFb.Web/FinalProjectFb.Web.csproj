@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\assets\cv\css\.DS_Store" />
+    <None Include="wwwroot\assets\cv\fonts\.DS_Store" />
+    <None Include="wwwroot\assets\cv\images\.DS_Store" />
+    <None Include="wwwroot\assets\cv\scss\.DS_Store" />
     <None Include="wwwroot\assets\job\css\.DS_Store" />
     <None Include="wwwroot\assets\job\css\bootstrap\.DS_Store" />
     <None Include="wwwroot\assets\job\css\bootstrap\mixins\.DS_Store" />

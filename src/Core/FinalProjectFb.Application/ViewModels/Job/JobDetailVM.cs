@@ -12,7 +12,7 @@ namespace FinalProjectFb.Application.ViewModels
     {
         public List<Job> RelatedJobs { get; set; }
         public List<Job> CompanyJobs { get; set; }
-        
+        public int JobId { get; set; }
 
         //public Job Jobs { get; set; }
         public JobItemVM Job { get; set; }
