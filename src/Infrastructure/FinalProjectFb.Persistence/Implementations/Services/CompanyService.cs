@@ -305,7 +305,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 Description = existed.Description,
                 Images= existed.Images,
                 CityIds=existed.CompanyCities.Select(c => c.CityId).ToList(),
-               Cities=await _cityRepository.GetAll().ToListAsync(),
+                Cities=await _cityRepository.GetAll().ToListAsync(),
             };
         }
 

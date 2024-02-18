@@ -261,94 +261,56 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 		//	return true;
 		//}
 
-		//public async Task<bool> UpdateAsync(UpdateJobVM UpdateJobVM, ModelStateDictionary modelState, int id)
-		//{
-		//	if (!modelState.IsValid) return false;
-		//	Job existed = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { "Images", "CompanyCities", "CompanyCities.City" });
-		//	if (existed == null) throw new Exception("Not found");
-		//	if (UpdateJobVM.Name != existed.Name)
-		//		if (await _repository.IsExistAsync(x => x.Name == UpdateJobVM.Name))
-		//		{
-		//			modelState.AddModelError("Name", "You have same name company like this, please change name");
-		//			return false;
-		//		}
+		public async Task<bool> UpdateAsync(UpdateJobVM UpdateJobVM, ModelStateDictionary modelState, int id)
+		{
+			if (!modelState.IsValid) return false;
+			Job existed = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { "Company",  "Category", "Images" });
+			if (existed == null) throw new Exception("Not found");
+			if (UpdateJobVM.Name != existed.Name)
+				if (await _repository.IsExistAsync(x => x.Name == UpdateJobVM.Name))
+				{
+					modelState.AddModelError("Name", "You have same name job like this, please change name");
+					return false;
+				}
 
-		//	existed.Name = UpdateJobVM.Name;
-		//	existed.IsDeleted = null;
-		//	existed.Requirement = UpdateJobVM.Requirement;
-		//	existed.Experience = UpdateJobVM.Experience;
-		//	existed.Vacancy = UpdateJobVM.Vacancy;
-		//	existed.Deadline = UpdateJobVM.Deadline;
-		//	existed.CategoryId = UpdateJobVM.CategoryId;
-		//	existed.JobNature = UpdateJobVM.JobNature;
-		//	existed.Salary = UpdateJobVM.Salary;
-		//	existed.d = UpdateJobVM.Requirement;
-		//	existed.Requirement = UpdateJobVM.Requirement;
+			existed.Name = UpdateJobVM.Name;
+			existed.IsDeleted = null;
+			existed.Requirement = UpdateJobVM.Requirement;
+			existed.Experience = UpdateJobVM.Experience;
+			existed.Vacancy = UpdateJobVM.Vacancy;
+			existed.Deadline = UpdateJobVM.Deadline;
+			existed.CategoryId = UpdateJobVM.CategoryId;
+			existed.JobNature = UpdateJobVM.JobNature;
+			existed.Salary = UpdateJobVM.Salary;
+			existed.ModifiedAt = DateTime.UtcNow;
+			
 
-
-
-
+			_repository.Update(existed);
 
 
+			if (UpdateJobVM.Photo != null)
+			{
+				Image main = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
+				if (main != null && main.Id > 0)
+				{
+					main.Url.DeleteFile(_env.WebRootPath, "assets", "img", "icon");
+					existed.Images.Remove(main);
+				}
 
 
-		//	_repository.Update(existed);
+				string fileName = await UpdateJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "icon");
+				existed.Images.Add(new Image
+				{
+					IsPrimary = true,
+					Url = fileName
+				});
+			}
+
+			await _repository.SaveChangesAsync();
+			return true;
 
 
-
-		//	if (UpdateJobVM.CityIds != null)
-		//	{
-		//		var existingCityIds = existed.CompanyCities.Select(cc => cc.CityId).ToList();
-		//		var citiesToRemove = existingCityIds.Except(UpdateJobVM.CityIds).ToList();
-
-		//		foreach (var cityId in citiesToRemove)
-		//		{
-		//			var cityToRemove = existed.CompanyCities.FirstOrDefault(cc => cc.CityId == cityId);
-		//			if (cityToRemove != null)
-		//			{
-		//				existed.CompanyCities.Remove(cityToRemove);
-		//			}
-		//		}
-		//	}
-
-
-		//	if (UpdateJobVM.CityIds != null)
-		//	{
-		//		foreach (var cityId in UpdateJobVM.CityIds)
-		//		{
-		//			if (!existed.CompanyCities.Any(cc => cc.CityId == cityId))
-		//			{
-		//				existed.CompanyCities.Add(new CompanyCity { CityId = cityId });
-		//			}
-		//		}
-		//	}
-
-
-
-
-		//	if (UpdateJobVM.Photo != null)
-		//	{
-		//		Image main = existed.Images.FirstOrDefault(pi => pi.IsPrimary == true);
-		//		if (main != null && main.Id > 0)
-		//		{
-		//			main.Url.DeleteFile(_env.WebRootPath, "assets", "img", "icon");
-		//			existed.Images.Remove(main);
-		//		}
-
-
-		//		string fileName = await UpdateJobVM.Photo.CreateFileAsync(_env.WebRootPath, "assets", "img", "icon");
-		//		existed.Images.Add(new Image
-		//		{
-		//			IsPrimary = true,
-		//			Url = fileName
-		//		});
-		//	}
-
-		//	await _repository.SaveChangesAsync();
-		//	return true;
-
-
-		//}
+		}
 
 
 
@@ -358,7 +320,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 		{
 			if (id < 1) throw new Exception("Bad Request");
 
-			Job existed = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { "Images" });
+			Job existed = await _repository.GetByIdAsync(id, isDeleted: false, includes: new string[] { "Company",  "Category", "Images" });
 			if (existed == null) throw new Exception("Not Found");
 
 			return new UpdateJobVM
@@ -372,8 +334,9 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 				Deadline=existed.Deadline,
 				CompanyId=existed.CompanyId,
 				Name = existed.Name,
-				
-			};
+                Categories = await _category.GetAll().ToListAsync(),
+				Images=existed.Images,
+            };
 		}
 		public async Task DeleteAsync(int id)
 		{

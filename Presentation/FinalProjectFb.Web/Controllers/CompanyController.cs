@@ -80,11 +80,11 @@ namespace FinalProjectFb.Web.Controllers
             try
             {
                 await _service.DeleteAsync(id);
-                return RedirectToAction("Index"); // Başarılıysa bir başka sayfaya yönlendirme yapabilirsiniz.
+                return RedirectToAction("Index"); 
             }
             catch (Exception ex)
             {
-                // Hata durumunda uygun bir işlem yapabilirsiniz, örneğin hata mesajını loglama.
+              
                 Console.WriteLine(ex.Message);
                 return RedirectToAction("Index");
 

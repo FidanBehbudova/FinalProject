@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uOsZGMuFls5V6nWLrT+jxh2gGqADaqt6Fc+Cmpui0rfZmjKVeMFgcBX2odOLKc7hqXAdtuZa1PhLcSVn8uyX9A==",
+  "dgSpecHash": "LIYGea8HK5F0BVrOoM2I0F6icyOkHmFufJJTwu6QxMiRj3BroRwZ8HPepS+OLs3y3Sxncn0Gh8ssPOl/bM1uMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fidan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.25\\microsoft.aspnetcore.cryptography.internal.6.0.25.nupkg.sha512",
     "C:\\Users\\Fidan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.25\\microsoft.aspnetcore.cryptography.keyderivation.6.0.25.nupkg.sha512",

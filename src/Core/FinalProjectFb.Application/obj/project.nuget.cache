@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JV9JqSSHPhEgOfrs/RpxGW5kdOsCwSP1PMvfnvD9Q2DniAL0eLm0O/AAgXkzTyBL0Bru9UCKGlRd+Vht1xPK5Q==",
+  "dgSpecHash": "dCz6RKBBVBJct+wmsYFAdPL8H8FPTlqdR/SbCuC8i5/ijcMUl5W0wEgq20XsAmze5PJfVZdX1mHPjMviLtV6DA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\FinalProjectFb\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj",
+  "projectFilePath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fidan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Fidan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

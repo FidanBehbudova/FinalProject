@@ -15,7 +15,7 @@ namespace FinalProjectFb.Application.Abstractions.Services
     {
 		//Task<CreateJobVM> CreatedAsyc(CreateJobVM vm);
 		//Task<bool> CreateAsync(CreateJobVM createJobVM, ModelStateDictionary ms);
-		//Task<bool> UpdateAsync(UpdateJobVM JobVm, ModelStateDictionary modelState, int id);
+		Task<bool> UpdateAsync(UpdateJobVM JobVm, ModelStateDictionary modelState, int id);
 		Task<UpdateJobVM> UpdatedAsync(int id);
 		Task DeleteAsync(int id);
 		Task ReverseDeleteAsync(int id);

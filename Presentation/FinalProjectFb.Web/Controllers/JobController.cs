@@ -34,12 +34,12 @@ namespace FinalProjectFb.Web.Controllers
 		{
 			return View(await _service.UpdatedAsync(id));
 		}
-		//[HttpPost]
-		//public async Task<IActionResult> Update(int id, UpdateJobVM updateVm)
-		//{
-		//	if (await _service.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
-		//	return View(await _service.UpdatedAsync(id));
-		//}
+		[HttpPost]
+		public async Task<IActionResult> Update(int id, UpdateJobVM updateVm)
+		{
+			if (await _service.UpdateAsync(updateVm, ModelState, id)) return RedirectToAction(nameof(Index));
+			return View(await _service.UpdatedAsync(id));
+		}
 
 
 		//public async Task<IActionResult> Create(int companyId)
