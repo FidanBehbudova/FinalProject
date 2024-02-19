@@ -825,11 +825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
       "projectName": "FinalProjectFb.Domain",
-      "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
+      "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\FinalProjectFb.Domain.csproj",
       "packagesPath": "C:\\Users\\Fidan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Core\\FinalProjectFb.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -260,8 +260,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CityId")
-                        .IsRequired()
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<int?>("CompanyId")
@@ -444,7 +443,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CompanyId")
+                    b.Property<int?>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -773,9 +772,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.HasOne("FinalProjectFb.Domain.Entities.Company", "Company")
                         .WithMany("Jobs")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CompanyId");
 
                     b.Navigation("AppUser");
 

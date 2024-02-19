@@ -11360,11 +11360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\Presentation\\FinalProjectFb.Web\\FinalProjectFb.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\Presentation\\FinalProjectFb.Web\\FinalProjectFb.Web.csproj",
       "projectName": "FinalProjectFb.Web",
-      "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\Presentation\\FinalProjectFb.Web\\FinalProjectFb.Web.csproj",
+      "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\Presentation\\FinalProjectFb.Web\\FinalProjectFb.Web.csproj",
       "packagesPath": "C:\\Users\\Fidan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\Presentation\\FinalProjectFb.Web\\obj\\",
+      "outputPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\Presentation\\FinalProjectFb.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11385,14 +11385,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj": {
-              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj"
+            "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj": {
+              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Core\\FinalProjectFb.Application\\FinalProjectFb.Application.csproj"
             },
-            "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Infrastructure\\FinalProjectFb.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Infrastructure\\FinalProjectFb.Infrastructure.csproj"
+            "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Infrastructure\\FinalProjectFb.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Infrastructure\\FinalProjectFb.Infrastructure.csproj"
             },
-            "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Persistence\\FinalProjectFb.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\New folder (3)\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Persistence\\FinalProjectFb.Persistence.csproj"
+            "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Persistence\\FinalProjectFb.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Fidan\\OneDrive\\Desktop\\job\\FinalProject\\src\\Infrastructure\\FinalProjectFb.Persistence\\FinalProjectFb.Persistence.csproj"
             }
           }
         }

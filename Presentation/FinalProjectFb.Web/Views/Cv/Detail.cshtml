@@ -1,0 +1,36 @@
+﻿@using FinalProjectFb.Application.ViewModels
+@model CvDetailVM
+
+<div class="section-top-border text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <img src="assets/img/elements/d.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-9 mt-sm-20">
+            <div class="col-xl-8 col-lg-8">
+                <div class="post-details3 mb-50">
+                    <!-- Small Section Tittle -->
+                    <div class="small-section-tittle">
+                        <h4>Cv Details</h4>
+                    </div>
+                    <ul>
+                        <li>Name : <span>@Model.Cv.Name</span></li>
+                        <li>Surname : <span>@Model.Cv.Surname</span></li>
+                        <li>Father Name  : <span>@Model.Cv.FatherName</span></li>
+                        <li>Finnish Code : <span>@Model.Cv.FinnishCode</span></li>
+                        <li>Birthday : <span>@Model.Cv.Birthday</span></li>
+                        <li>Phone : <span>@Model.Cv.PhoneNumber</span></li>
+                        <li>Address : <span>@Model.Cv.Address</span></li>
+                        <li>Email Address : <span>@Model.Cv.EmailAddress</span></li>
+                    </ul>
+                    <div class="apply-btn2">
+                        <a asp-action="confirmed" asp-controller="cv" asp-route-id="@Model.Cv.CvId" class="btn">Admit it</a>
+                        <a asp-action="delete" asp-controller="cv" asp-route-id="@Model.Cv.CvId" class="btn">To reject</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

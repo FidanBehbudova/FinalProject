@@ -1,5 +1,5 @@
 ﻿using FinalProjectFb.Application.ViewModels;
-using FinalProjectFb.Application.ViewModels.Cv;
+using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -14,6 +14,9 @@ namespace FinalProjectFb.Application.Abstractions.Services
 	{
 		Task<bool> CreateAsync(CreateCvVM vm, ModelStateDictionary modelstate);
 		Task<PaginateVM<Cv>> GetAllAsync(int id, int page = 1, int take = 5);
+		Task<CvDetailVM> DetailAsync(int id);
+		Task ReverseDeleteAsync(int id);
+		Task SoftDeleteAsync(int id);
 
     }
 }

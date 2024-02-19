@@ -1,7 +1,8 @@
 ﻿using FinalProjectFb.Application.Abstractions.Repositories;
 using FinalProjectFb.Application.Abstractions.Services;
+using FinalProjectFb.Application.Utilities.Exceptions;
 using FinalProjectFb.Application.ViewModels;
-using FinalProjectFb.Application.ViewModels.Cv;
+using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using FinalProjectFb.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -44,7 +45,23 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 
         //    // Diğer kodlar...
         //}
+        public async Task ReverseDeleteAsync(int id)
+        {
+            if (id < 1) throw new WrongRequestException("");
+            Cv existed = await _repository.GetByIdAsync(id, isDeleted: true);
+            if (existed == null) throw new NotFoundException("Not Found");
+            _repository.ReverseDelete(existed);
+            await _repository.SaveChangesAsync();
+        }
 
+        public async Task SoftDeleteAsync(int id)
+        {
+            if (id < 1) throw new WrongRequestException("");
+            Cv existed = await _repository.GetByIdAsync(id, isDeleted: false);
+            if (existed == null) throw new NotFoundException("");
+            _repository.SoftDelete(existed);
+            await _repository.SaveChangesAsync();
+        }
         public async Task<PaginateVM<Cv>> GetAllAsync(int id, int page = 1, int take = 10)
         {
             if (page < 1 || take < 1) throw new Exception("Bad request");
@@ -84,6 +101,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                     
                     Cv cv = new Cv
                     {
+                        IsDeleted = null,
                         AppUserId = User.Id,
                         CreatedBy = User.UserName,
                         CreatedAt = DateTime.UtcNow,
@@ -107,27 +125,40 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 
             return false;
 		}
-		//public async Task<bool> CreateAsync(CreateCvVM vm, ModelStateDictionary modelstate)
-		//{
-		//	if (!modelstate.IsValid) return false;
 
-		//	AppUser User = await _user.GetUser(_accessor.HttpContext.User.Identity.Name);
-		//	await _repository.AddAsync(new Cv
-		//	{
-		//		CreatedBy = User.UserName,
-		//		CreatedAt = DateTime.UtcNow,
-		//		Name = vm.Name,
-		//		FatherName = vm.FatherName,
-		//		Surname = vm.Surname,
-		//		FinnishCode = vm.FinnishCode,
-		//		Address = vm.Address,
-		//		Birthday = vm.Birthday,
-		//		PhoneNumber = vm.PhoneNumber,
+		public async  Task<CvDetailVM> DetailAsync(int id)
+		{
+			if (id < 1) throw new WrongRequestException("");
 
-		//		JobId=vm.JobId
-		//	});
-		//	await _repository.SaveChangesAsync();
-		//	return true;
-		//}
+			Cv cv = await _repository.GetByIdAsync(id);
+
+
+			CvItemVM CvItemVM = new CvItemVM
+			{
+                CvId=cv.Id,
+				Name = cv.Name,
+				Surname = cv.Surname,
+				FatherName = cv.FatherName,
+				FinnishCode = cv.FinnishCode,
+				Address = cv.Address,
+				EmailAddress = cv.EmailAddress,
+				JobId = cv.JobId,
+				Birthday = cv.Birthday,
+				PhoneNumber = cv.PhoneNumber
+			};
+				   
+			if (cv is null) throw new NotFoundException("");
+
+			CvDetailVM detailVM = new CvDetailVM
+			{
+
+				Cv = CvItemVM
+			};
+			return detailVM;
+		}
+		
 	}
+
+	
+	
 }

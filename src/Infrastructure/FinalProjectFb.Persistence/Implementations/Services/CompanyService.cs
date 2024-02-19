@@ -2,6 +2,7 @@
 using FinalProjectFb.Application.Abstractions.Repositories.Generic;
 using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.Utilities;
+using FinalProjectFb.Application.Utilities.Exceptions;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using FinalProjectFb.Domain.Enums;
@@ -177,7 +178,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         }
         public async Task<CompanyDetailVM> DetailAsync(int id)
         {
-            if (id < 1) throw new ArgumentOutOfRangeException("id");
+            if (id < 1) throw new WrongRequestException("wrong");
 
             Company company = await _repository.GetByIdAsync(id, includes: new string[] { "CompanyCities", "Images" });
 
@@ -194,9 +195,10 @@ namespace FinalProjectFb.Persistence.Implementations.Services
                 WebsiteLink = company.WebsiteLink,
                 Description = company.Description,
                 CompanyCities = company.CompanyCities,
-                CompanyId = company.Id
+                CompanyId = company.Id,
+
             };
-            if (company is null) throw new Exception("Not found");
+            if (company is null) throw new NotFoundException("not found");
 
             CompanyDetailVM detailVM = new CompanyDetailVM
             {

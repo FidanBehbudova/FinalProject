@@ -41,3 +41,19 @@ C:\Users\Fidan\OneDrive\Desktop\New folder (3)\FinalProject\src\Core\FinalProjec
 C:\Users\Fidan\OneDrive\Desktop\New folder (3)\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\refint\FinalProjectFb.Application.dll
 C:\Users\Fidan\OneDrive\Desktop\New folder (3)\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.pdb
 C:\Users\Fidan\OneDrive\Desktop\New folder (3)\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\ref\FinalProjectFb.Application.dll
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\bin\Debug\net6.0\FinalProjectFb.Application.deps.json
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\bin\Debug\net6.0\FinalProjectFb.Application.dll
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\bin\Debug\net6.0\FinalProjectFb.Application.pdb
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\bin\Debug\net6.0\FinalProjectFb.Domain.dll
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\bin\Debug\net6.0\FinalProjectFb.Domain.pdb
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.csproj.AssemblyReference.cache
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.AssemblyInfoInputs.cache
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.AssemblyInfo.cs
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.csproj.CoreCompileInputs.cache
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.sourcelink.json
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.csproj.CopyComplete
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.dll
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\refint\FinalProjectFb.Application.dll
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\FinalProjectFb.Application.pdb
+C:\Users\Fidan\OneDrive\Desktop\job\FinalProject\src\Core\FinalProjectFb.Application\obj\Debug\net6.0\ref\FinalProjectFb.Application.dll

@@ -42,7 +42,8 @@
                 count++;
                 <div class="table-row">
                     <div class="serial">@count</div>
-                    <div class="country" style="color: @(item.IsDeleted == true ? "red" : (item.IsDeleted == false ? "green" : "blue"))">@item.Name</div>
+                    <a asp-action="detail" asp-controller="company" asp-route-id="@item.Id" class="country" style="color: @(item.IsDeleted == true ? "red" : (item.IsDeleted == false ? "green" : "blue"));">@item.Name</a>
+
                     <div class="visit">
                         @if (item.IsDeleted == true || item.IsDeleted == null)
                         {

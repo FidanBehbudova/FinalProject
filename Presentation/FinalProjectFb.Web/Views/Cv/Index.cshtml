@@ -31,6 +31,7 @@
 				<div class="table-row">
 					<div class="serial">@count</div>
 					<div class="country">@item.Name</div>
+					<div class="country"><a asp-action="detail" asp-controller="Cv" asp-route-id="@item.Id">@item.Name</a></div>
 					@* <div class="visit"><a asp-action="index" asp-controller="job" asp-route-id="@item.Id">Cv</a></div> *@
 					@* <div class="country">
 						<a asp-action="create" asp-controller="job" asp-route-id="@item.Id" class="genric-btn primary-border circle">Update</a>

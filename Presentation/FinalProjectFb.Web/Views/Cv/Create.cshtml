@@ -1,4 +1,4 @@
-﻿@using FinalProjectFb.Application.ViewModels.Cv
+﻿@using FinalProjectFb.Application.ViewModels
 @model CreateCvVM
 
 
@@ -65,7 +65,7 @@
                                 </div>
 								<div class="row">
 									<div class="col-md-6 form-group">
-										<input asp-for="EmailAddress" type="email" class="form-control" placeholder="Father Name">
+										<input asp-for="EmailAddress" type="email" class="form-control" placeholder="Email Address">
 										<span class="text-danger" asp-validation-for="EmailAddress"></span>
 									</div>
 									<div class="col-md-6 form-group">
@@ -81,8 +81,11 @@
 										<input asp-for="Address" type="text" class="form-control" placeholder="Address">
 										<span class="text-danger" asp-validation-for="Address"></span>
 									</div>
-									<div >
-										<button type="submit" >Submit</button>
+									<div class="row">
+										<div class="col-md-6 form-group">
+											<input type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+											<span class="submitting"></span>
+										</div>
 									</div>
 
 									<script>

@@ -17,7 +17,7 @@
             }
             catch (Exception e)
             {
-                httpContext.Response.Redirect($"/error/index?error={e.Message}");
+                httpContext.Response.Redirect($"/error/errorpage?error={e.Message}");
             }
         }
     }

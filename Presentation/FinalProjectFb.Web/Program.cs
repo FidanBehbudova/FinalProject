@@ -4,6 +4,7 @@ using System;
 using FinalProjectFb.Persistence.ServiceRegistration;
 using Microsoft.AspNetCore.Hosting;
 using FinalProjectFb.Application.ServiceRegistration;
+using FinalProjectFb.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.UseEndpoints(endpoints =>
 {
 	endpoints.MapControllerRoute(

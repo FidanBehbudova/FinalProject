@@ -9,6 +9,11 @@ namespace FinalProjectFb.Domain.Entities
 {
 	public class Cv:BaseNameableEntity
 	{
+        public Cv()
+        {
+            IsDeleted = null;
+
+        }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
         public string Surname { get; set; }

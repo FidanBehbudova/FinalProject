@@ -1,6 +1,6 @@
 ﻿using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.ViewModels;
-using FinalProjectFb.Application.ViewModels.Cv;
+using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using FinalProjectFb.Persistence.Implementations.Services;
 using FinalProjectFb.ViewModels;
@@ -41,18 +41,31 @@ namespace FinalProjectFb.Web.Controllers
 
 		public async Task<IActionResult> Create(CreateCvVM vm)
         {
-            // Debug amaçlı olarak JobId'yi kontrol et
+           
             Console.WriteLine($"JobId: {vm.JobId}");
 
             if (vm.JobId > 0)
             {
-                // Geri kalan işlemler
+               
                 if (await _service.CreateAsync(vm, ModelState))
                     return RedirectToAction("Index","Home", new { id = vm.JobId });
             }
 
             return View(vm);
         }
-
+		public async Task<IActionResult> Detail(int id)
+		{
+			return View(await _service.DetailAsync(id));
+		}
+        public async Task<IActionResult> Deleted(int id)
+        {
+            await _service.SoftDeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Confirmed(int id)
+        {
+            await _service.ReverseDeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
