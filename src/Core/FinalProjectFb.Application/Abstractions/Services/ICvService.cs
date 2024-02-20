@@ -17,6 +17,6 @@ namespace FinalProjectFb.Application.Abstractions.Services
 		Task<CvDetailVM> DetailAsync(int id);
 		Task ReverseDeleteAsync(int id);
 		Task SoftDeleteAsync(int id);
-
+		Task<Cv> GetJobAsync(int id);
     }
 }

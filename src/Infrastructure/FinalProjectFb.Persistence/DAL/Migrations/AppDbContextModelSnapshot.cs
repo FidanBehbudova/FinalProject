@@ -412,8 +412,7 @@ namespace FinalProjectFb.Persistence.Dal.Migrations
 
                     b.Property<string>("Url")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 

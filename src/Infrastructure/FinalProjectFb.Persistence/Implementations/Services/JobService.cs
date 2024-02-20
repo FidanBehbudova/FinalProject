@@ -45,7 +45,18 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 			_company = company;
 			_category = category;
 		}
-		
+		public async Task<AllJobVM> AllJobAsync()
+		{
+			AllJobVM vm = new AllJobVM
+			{
+				Categories=await _category.GetAll(includes: new string[] { "Jobs" }).ToListAsync(),
+				Jobs=await _repository.GetAll(includes: new string[] {"Images","Category"}).ToListAsync(),
+			};
+			return vm;
+
+
+
+		}
 		public async Task<bool> Create(CreateJobVM createJobVM, ModelStateDictionary modelstate)
 		{
 
@@ -312,10 +323,6 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 
 		}
 
-
-
-
-
 		public async Task<UpdateJobVM> UpdatedAsync(int id)
 		{
 			if (id < 1) throw new Exception("Bad Request");
@@ -347,7 +354,6 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 			_repository.Delete(existed);
 			await _repository.SaveChangesAsync();
 		}
-
 
 		public async Task ReverseDeleteAsync(int id)
 		{

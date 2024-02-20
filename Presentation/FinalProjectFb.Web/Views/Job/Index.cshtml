@@ -36,9 +36,11 @@
 				count++;
 				<div class="table-row">
 					<div class="serial">@count</div>
-					<a asp-action="detail" asp-controller="job" asp-route-id="@item.Id" class="country" style="text-decoration: none; color: inherit; cursor: pointer;">@item.Name</a>
+					<a asp-action="detail" asp-controller="job" asp-route-id="@item.Id" class="country" style="text-decoration: none; color: inherit; cursor: pointer;">@item.Name<span>@item.Cvs.Count</span></a>
 
-					<div class="visit"><a asp-action="index" asp-controller="Cv" asp-route-id="@item.Id">Cv</a></div>
+					<div class="visit"><a style="color:black" asp-action="index" asp-controller="Cv" asp-route-id="@item.Id">Cv</a></div>
+
+
 					<div class="country">
 						<a asp-action="update" asp-controller="job" asp-route-id="@item.Id" class="genric-btn primary-border circle">Update</a>
 						<a asp-action="delete" asp-controller="job" asp-route-id="@item.Id" class="genric-btn primary-border circle">Delete</a>

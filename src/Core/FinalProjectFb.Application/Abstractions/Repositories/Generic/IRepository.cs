@@ -20,7 +20,7 @@ namespace FinalProjectFb.Application.Abstractions.Repositories.Generic
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression,  bool? isDeleted = null , bool isTracking = false, bool ignoreQuery = false, params string[] includes);
         Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task<bool> IsExist(Expression<Func<T, bool>> expression);
-        IQueryable<T> GetPaginationC<T>(Expression<Func<T, bool>> filter = null, int skip = 0, int take = 10) where T : class;
+        IQueryable<T> GetPaginationC<T>(Expression<Func<T, bool>> filter = null, int skip = 0, int take = 10, params string[] includes) where T : class;
         IQueryable<T> GetAllnotDeleted(bool isTracking = false, params string[] includes);
         Task<T> GetByIdnotDeletedAsync(int id, bool isTracking = false, params string[] includes);
 

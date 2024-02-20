@@ -2,7 +2,6 @@
 using FinalProjectFb.Application.Abstractions.Services;
 using FinalProjectFb.Application.Utilities.Exceptions;
 using FinalProjectFb.Application.ViewModels;
-using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
 using FinalProjectFb.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -54,6 +53,15 @@ namespace FinalProjectFb.Persistence.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
+        public async Task<Cv> GetJobAsync(int id)
+        {
+            if (id < 1) throw new WrongRequestException("");
+            Cv cv= await _repository.GetByIdAsync(id,includes: nameof(Job));            
+            if (cv == null) throw new NotFoundException("");
+            return cv;
+           
+            
+        }
         public async Task SoftDeleteAsync(int id)
         {
             if (id < 1) throw new WrongRequestException("");

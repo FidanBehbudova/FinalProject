@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProjectFb.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace FinalProjectFb.Application.ViewModels
         public int CurrentPage { get; set; }
         public int CompanyId { get; set; }
         public int JobId { get; set; }
+       
+
 
     }
 }

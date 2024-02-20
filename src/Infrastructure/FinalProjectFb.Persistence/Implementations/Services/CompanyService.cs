@@ -43,9 +43,7 @@ namespace FinalProjectFb.Persistence.Implementations.Services
         public async Task<PaginateVM<Company>> GetCompaniesCreatedByUserAsync(string userId, int page = 1, int take = 10)
         {
 
-            ICollection<Company> companies = await _repository.GetPaginationC<Company>(c => c.AppUserId == userId, skip: (page - 1) * take, take: take).ToListAsync();
-
-
+            ICollection<Company> companies = await _repository.GetPagination(orderExpression: c => c.AppUserId == userId, includes: new string[] { nameof(Company.Images),nameof(Company.Jobs) }).ToListAsync();
             int count = await _repository.GetAll().CountAsync(c => c.AppUserId == userId);
             double totalpage = Math.Ceiling((double)count / take);
 
@@ -165,11 +163,13 @@ namespace FinalProjectFb.Persistence.Implementations.Services
 
         public async Task<PaginateVM<Company>> GetAllAsync(int page = 1, int take = 10)
         {
-            ICollection<Company> companies = await _repository.GetPagination(skip: (page - 1) * take, take: take).ToListAsync();
+            
+            ICollection<Company> companies = await _repository.GetPagination(skip: (page - 1) * take, take: take,includes:new string[] { "Images","Job" }).ToListAsync();
             int count = await _repository.GetAll().CountAsync();
             double totalpage = Math.Ceiling((double)count / take);
             PaginateVM<Company> vm = new PaginateVM<Company>
             {
+                
                 Items = companies,
                 CurrentPage = page,
                 TotalPage = totalpage

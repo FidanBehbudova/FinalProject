@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectFb.Web.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly IUserService _service;
         private readonly UserManager<AppUser> _userManager;
@@ -40,7 +40,8 @@ namespace FinalProjectFb.Web.Controllers
                     return View(vm);
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index","Home");
+
         }
         public IActionResult Login()
         {
@@ -67,7 +68,7 @@ namespace FinalProjectFb.Web.Controllers
 
            
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction(nameof(RedirectToIndexBasedOnRole));
 
 		}
 

@@ -114,18 +114,18 @@ namespace FinalProjectFb.Persistence.Implementations.Repositories.Generic
             if (includes != null) query = _addIncludes(query, includes);
             return await query.FirstOrDefaultAsync();
         }
-        public IQueryable<T> GetPaginationC<T>(Expression<Func<T, bool>> filter = null, int skip = 0, int take = 10) where T : class
+        public IQueryable<T> GetPaginationC<T>(Expression<Func<T, bool>> filter = null, int skip = 0, int take = 10, params string[] includes) where T : class
         {
            
             IQueryable<T> query = _context.Set<T>();
 
-          
             if (filter != null)
             {
                 query = query.Where(filter);
             }
 
-            // Sayfalama
+            
+            
             query = query.Skip(skip).Take(take);
 
             return query;

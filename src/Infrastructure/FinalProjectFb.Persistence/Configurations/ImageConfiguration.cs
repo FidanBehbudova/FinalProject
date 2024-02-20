@@ -13,7 +13,7 @@ namespace FinalProjectFb.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Image> builder)
         {
-            builder.Property(x => x.Url).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Url).IsRequired();
             builder.HasIndex(x => x.Url).IsUnique();
 
           

@@ -1,7 +1,9 @@
 ﻿using FinalProjectFb.Application.Abstractions.Repositories;
 using FinalProjectFb.Application.Abstractions.Services;
+using FinalProjectFb.Application.Utilities.Exceptions;
 using FinalProjectFb.Application.ViewModels;
 using FinalProjectFb.Domain.Entities;
+using FinalProjectFb.Persistence.DAL;
 using FinalProjectFb.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -12,12 +14,14 @@ namespace FinalProjectFb.Web.Controllers
 	{
 		private readonly IJobService _service;
 		private readonly ICompanyRepository _company;
+        private readonly AppDbContext _context;
 
-		public JobController(IJobService service, ICompanyRepository company)
+        public JobController(IJobService service, ICompanyRepository company,AppDbContext context)
 		{
 			_service = service;
 			_company = company;
-		}
+            _context = context;
+        }
 		
 		public async Task<IActionResult> Index(int id, int page = 1, int take = 5)
 		{
@@ -26,6 +30,31 @@ namespace FinalProjectFb.Web.Controllers
 			if (vm.Items == null) return NotFound();
 			return View(vm);
 		}
+
+		public async Task<IActionResult> AllJob()
+		{
+            //         PaginateVM<Job> vm = await _service.GetAllAsync(id, page, take);
+            //return View(vm);
+            //try
+            //{
+                var result = await _service.AllJobAsync();
+
+                if (result != null)
+                {
+                    return View(result);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            //}
+            //catch (Exception ex)
+            //{
+                
+            //    return View("Error", new ErrorController {  });
+            //}
+        }
+
 		public async Task<IActionResult> Detail(int id)
 		{
 			return View(await _service.DetailAsync(id));

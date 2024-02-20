@@ -60,12 +60,16 @@ namespace FinalProjectFb.Web.Controllers
         public async Task<IActionResult> Deleted(int id)
         {
             await _service.SoftDeleteAsync(id);
-            return RedirectToAction(nameof(Index));
-        }
+			Cv cv = await _service.GetJobAsync(id);
+
+			return RedirectToAction("Index", new { Id = cv.Job.Id });
+		}
         public async Task<IActionResult> Confirmed(int id)
         {
             await _service.ReverseDeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+           Cv cv =await _service.GetJobAsync(id);
+
+            return RedirectToAction("Index",new {Id=cv.Job.Id});
         }
     }
 }
